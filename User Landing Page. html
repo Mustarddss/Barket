@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title> NU BARKET</title>
+    
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css">
+
+    <!--FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+
+    <!--HEADER-->
+    <header>
+            <div class="navTop">
+                <div class="navLogo">
+                    <a href="#" class="logo"><img src="Project Logo.png" alt=""></a>
+                    <span class="logoText">NU Barket</span>
+                </div>
+    
+                <div class="navSearch">
+                    <div class="search">
+                        <a href="#"><i class='bx bx-search'></i></a>
+                        <input type="text" placeholder="What are you looking for? " class="searchInput">
+                    </div>
+                </div>
+    
+                <div class="nav-icon">
+                    <a href="#"><i class='bx  bx-cart'></i></a>
+                    <a href="#"><i class='bx bx-shopping-bag'></i></a>
+                    <a href="#"><i class='bx bx-user'></i></a>
+                </div>
+            </div>
+    </header>
+
+    <!--BANNER-->
+
+    <div class="banner">
+        <div class="banner-text">
+            <p>Fresh Drops Just In</p>
+            <h1>New Arrival</h1>
+        </div>
+        <button class="shop-button">Shop Now</button>
+        <div class="nav-bottom-icon">
+            <a href="javascript:void(0);" onclick="togglePopup()" class="nav-menu-btn"> <i class='bx bx-menu'></i></a>
+        </div>
+          
+    </div>
+
+    <script>
+        function togglePopup() {
+          const popup = document.getElementById('categoryPopup');
+          popup.classList.toggle('show');
+        }
+        
+        // Close popup if clicked outside
+        document.addEventListener('click', function (e) {
+          const popup = document.getElementById('categoryPopup');
+          const menuBtn = document.querySelector('.nav-menu-btn');
+        
+          if (!popup.contains(e.target) && !menuBtn.contains(e.target)) {
+            popup.classList.remove('show');
+          }
+        });
+        
+        // Toggle dropdowns
+        function toggleDropdown(id, headerEl) {
+          const dropdown = document.getElementById(id);
+          const arrow = headerEl.querySelector('.arrow');
+          if (dropdown) {
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+          }
+          if (arrow) {
+            arrow.classList.toggle('down');
+          }
+        }
+    </script>
+        
+    <!-- Popup Categories Window -->
+    <div class="popup" id="categoryPopup">
+      <h2>BEST SELLING</h2>
+      <h2>NEW ARRIVAL</h2>
+
+      <h3>CATEGORIES</h3>
+      <!-- Dropdown: Fashion & Accessories -->
+      <div class="category-header" onclick="toggleDropdown('fashionDropdown', this)">
+        Fashion & Accessories <span class="arrow">▶</span>
+      </div>
+      <ul class="dropdown" id="fashionDropdown">
+        <li>Shirt</li>
+        <li>T-Shirt</li>
+        <li>Blouse</li>
+        <li>Croptop</li>
+        <li>Polo Shirt</li>
+        <li>Leggings</li>
+        <li>Trouser</li>
+        <li>Short</li>
+        <li>Accessories</li>
+        <li>Footwear</li>
+      </ul>
+
+      <!-- Dropdown: Food & Drinks -->
+      <div class="category-header" onclick="toggleDropdown('foodDropdown', this)">
+        Food & Drinks <span class="arrow">▶</span>
+      </div>
+      <ul class="dropdown" id="foodDropdown">
+        <li>Snacks</li>
+        <li>Beverages</li>
+        <li>Meal Packs</li>
+      </ul>
+
+      <!-- Dropdown: Beauty & Care -->
+      <div class="category-header" onclick="toggleDropdown('beautyDropdown', this)">
+        Beauty & Care <span class="arrow">▶</span>
+      </div>
+      <ul class="dropdown" id="beautyDropdown">
+        <li>Skincare</li>
+        <li>Haircare</li>
+        <li>Cosmetics</li>
+      </ul>
+
+      <!-- Dropdown: Toys & Hobbies -->
+      <div class="category-header" onclick="toggleDropdown('toysDropdown', this)">
+        Toys & Hobbies <span class="arrow">▶</span>
+      </div>
+      <ul class="dropdown" id="toysDropdown">
+        <li>Puzzles</li>
+        <li>Action Figures</li>
+        <li>Board Games</li>
+      </ul>
+
+      <!-- Dropdown: Gadget -->
+      <div class="category-header" onclick="toggleDropdown('gadgetDropdown', this)">
+        Gadget <span class="arrow">▶</span>
+      </div>
+      <ul class="dropdown" id="gadgetDropdown">
+        <li>Smartphones</li>
+        <li>Accessories</li>
+        <li>Wearables</li>
+      </ul>
+
+      <!-- Static Category -->
+      <div class="category-header">Others</div>
+    </div>
+
+    <!--PRODUCT-->
+
+    <section class="trending-products" id="trending">
+        <div class="recom-text">
+            <h2>Recommended For You </h2>
+        </div>
+
+        <div class="products">
+            <div class="row">
+                <img src="small-clothe 1.jpg" alt="">
+                <div class="product-text">
+                    <h5> Sale </h5>
+                </div>
+                <div class="heart-icon">
+                    <i class='bx  bx-heart'></i> 
+                </div>
+                <div class="rating">
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bxs-star-half'></i> 
+                </div>
+
+                <div class="price">
+                    <h4>Long Sleeves</h4>
+                    <p>₱50</p>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <img src="small-clothe 2.jpg" alt="">
+                <div class="product-text">
+                    <h5> NEW </h5>
+                </div>
+                <div class="heart-icon">
+                    <i class='bx  bx-heart'></i> 
+                </div>
+                <div class="rating">
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bxs-star-half'></i> 
+                </div>
+
+                <div class="price">
+                    <h4>Long Sleeves</h4>
+                    <p>₱60</p>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <img src="small-clothe 3.jpg" alt="">
+                <div class="product-text">
+                </div>
+                <div class="heart-icon">
+                    <i class='bx  bx-heart'></i> 
+                </div>
+                <div class="rating">
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bxs-star-half'></i> 
+                </div>
+
+                <div class="price">
+                    <h4>Cover Up</h4>
+                    <p>₱60</p>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <img src="small-clothe 4.jpg" alt="">
+                <div class="product-text">
+                    <h5> Sale </h5>
+                </div>
+                <div class="heart-icon">
+                    <i class='bx  bx-heart'></i> 
+                </div>
+                <div class="rating">
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bxs-star-half'></i> 
+                </div>
+
+                <div class="price">
+                    <h4>Long Sleeves</h4>
+                    <p>₱50</p>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <img src="medium-clothe.jpg" alt="">
+                <div class="product-text">
+                    <h5> New </h5>
+                </div>
+                <div class="heart-icon">
+                    <i class='bx  bx-heart'></i> 
+                </div>
+                <div class="rating">
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bxs-star-half'></i> 
+                </div>
+
+                <div class="price">
+                    <h4>Blouse</h4>
+                    <p>₱70</p>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <img src="medium-clothe 2.jpg" alt="">
+                <div class="product-text">
+                </div>
+                <div class="heart-icon">
+                    <i class='bx  bx-heart'></i> 
+                </div>
+                <div class="rating">
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bxs-star-half'></i> 
+                </div>
+
+                <div class="price">
+                    <h4>Puff Blouse</h4>
+                    <p>₱70</p>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <img src="large-clothe.jpg" alt="">
+                <div class="product-text">
+                    <h5> Sale </h5>
+                </div>
+                <div class="heart-icon">
+                    <i class='bx  bx-heart'></i> 
+                </div>
+                <div class="rating">
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bxs-star-half'></i> 
+                </div>
+
+                <div class="price">
+                    <h4>Shirt</h4>
+                    <p>₱80</p>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <img src="small-clothe 1.jpg" alt="">
+                <div class="product-text">
+                    <h5> Sale </h5>
+                </div>
+                <div class="heart-icon">
+                    <i class='bx  bx-heart'></i> 
+                </div>
+                <div class="rating">
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bx-star'></i> 
+                    <i class='bx  bxs-star-half'></i> 
+                </div>
+
+                <div class="price">
+                    <h4>Shirt</h4>
+                    <p>₱80</p>
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+
+    </script>
+
+     <!--BANNER 2-->
+     <div class="banner2">
+        <div class="banner-text2">
+          <p>Fan favorites and top picks</p>
+          <h1>BEST SELLING</h1>
+          <button class="shop-button">Shop Now</button>
+        </div>
+      </div>
+
+      <!--CATEGORIES-->
+    <section class="check-this-out">
+        <h2>Check This Out</h2>
+        <div class="categories">
+            <div class="category-card">
+                <img src="fashion.jpg" alt="Fashion Accessories">
+                <div class="category-text">
+                    <h3>Fashion & Accessories</h3>
+                    <p>Trendy fits, must-have accessories, and everything you need to level up your style.</p>
+                    <button class="shop-button" onclick="this.classList.toggle('clicked')">Shop Now</button>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="food.jpg" alt="Food & Drinks">
+                <div class="category-text">
+                    <h3>Food & Drinks</h3>
+                    <p>Quality flavors to refresh and satisfy every craving.</p>
+                    <button class="shop-button" onclick="this.classList.toggle('clicked')">Shop Now</button>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="beauty.jpg" alt="Beauty & Care">
+                <div class="category-text">
+                    <h3>Beauty & Care</h3>
+                    <p>Clean essentials for glowing skin and everyday self-care.</p>
+                    <button class="shop-button" onclick="this.classList.toggle('clicked')">Shop Now</button>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="gadgets.jpg" alt="Gadgets">
+                <div class="category-text">
+                    <h3>Gadgets</h3>
+                    <p>Every tech that fits your vibe, keeps you connected, and makes life easier.</p>
+                    <button class="shop-button" onclick="this.classList.toggle('clicked')">Shop Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--FOOTER-->
+    <footer>
+        <div class="footer-cont">
+        <ul>
+                    <li>
+                        <div class="footer-logo">
+                            <img src="Project Logo.png" alt="NU Barket Logo">
+                        </div>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About NU Barket</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Return/Refund Policy</h3>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>
