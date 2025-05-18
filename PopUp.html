@@ -1,0 +1,99 @@
+<!-- Floating Button -->
+    <button class="floating-btn" onclick="togglePopup()">☰</button>
+
+    <!-- Popup Categories Window -->
+    <div class="popup" id="categoryPopup">
+      <h2>BEST SELLING</h2>
+      <h2>NEW ARRIVAL</h2>
+
+      <h3>CATEGORIES</h3>
+      <!-- Dropdown: Fashion & Accessories -->
+      <div class="category-header" onclick="toggleDropdown('fashionDropdown', this)">
+        Fashion & Accessories <span class="arrow">▶</span>
+      </div>
+      <ul class="dropdown" id="fashionDropdown">
+        <li>Shirt</li>
+        <li>T-Shirt</li>
+        <li>Blouse</li>
+        <li>Croptop</li>
+        <li>Polo Shirt</li>
+        <li>Leggings</li>
+        <li>Trouser</li>
+        <li>Short</li>
+        <li>Accessories</li>
+        <li>Footwear</li>
+      </ul>
+
+      <!-- Dropdown: Food & Drinks -->
+      <div class="category-header" onclick="toggleDropdown('foodDropdown', this)">
+        Food & Drinks <span class="arrow">▶</span>
+      </div>
+      <ul class="dropdown" id="foodDropdown">
+        <li>Snacks</li>
+        <li>Beverages</li>
+        <li>Meal Packs</li>
+      </ul>
+
+      <!-- Dropdown: Beauty & Care -->
+      <div class="category-header" onclick="toggleDropdown('beautyDropdown', this)">
+        Beauty & Care <span class="arrow">▶</span>
+      </div>
+      <ul class="dropdown" id="beautyDropdown">
+        <li>Skincare</li>
+        <li>Haircare</li>
+        <li>Cosmetics</li>
+      </ul>
+
+      <!-- Dropdown: Toys & Hobbies -->
+      <div class="category-header" onclick="toggleDropdown('toysDropdown', this)">
+        Toys & Hobbies <span class="arrow">▶</span>
+      </div>
+      <ul class="dropdown" id="toysDropdown">
+        <li>Puzzles</li>
+        <li>Action Figures</li>
+        <li>Board Games</li>
+      </ul>
+
+      <!-- Dropdown: Gadget -->
+      <div class="category-header" onclick="toggleDropdown('gadgetDropdown', this)">
+        Gadget <span class="arrow">▶</span>
+      </div>
+      <ul class="dropdown" id="gadgetDropdown">
+        <li>Smartphones</li>
+        <li>Accessories</li>
+        <li>Wearables</li>
+      </ul>
+
+      <!-- Static Category -->
+      <div class="category-header">Others</div>
+    </div>
+
+
+
+
+
+
+
+
+  <script>
+    function togglePopup() {
+      document.getElementById('categoryPopup').classList.toggle('show');
+    }
+
+    // Click outside to close popup
+    document.addEventListener('click', function(e) {
+      const popup = document.getElementById('categoryPopup');
+      const button = document.querySelector('.floating-btn');
+      if (!popup.contains(e.target) && !button.contains(e.target)) {
+        popup.classList.remove('show');
+      }
+    });
+
+    // Toggle Dropdowns
+    function toggleDropdown(id, headerEl) {
+      const dropdown = document.getElementById(id);
+      const arrow = headerEl.querySelector('.arrow');
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      arrow.classList.toggle('down');
+    }
+  </script>
