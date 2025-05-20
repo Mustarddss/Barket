@@ -1,0 +1,144 @@
+/*SETTINGS add nalang itez sa css nung pinaka main natin ehe, lagay nalang ng comment*/
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
+    margin-top: 150px;
+}
+
+.container {
+    display: flex;
+    width: 800px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f8f9fa;
+    padding: 20px 0;
+}
+
+.sidebar button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+}
+
+.sidebar button.active {
+    background-color: #1a3c6e;
+    color: white;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.user-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.user-info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.user-info h2 {
+    margin: 10px 0;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.input-group label {
+    display: inline-block;
+    width: 100px;
+}
+
+.input-group input {
+    padding: 5px;
+    width: 200px;
+}
+
+.input-group .change {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #1a3c6e;
+}
+
+.input-group .calendar {
+    position: relative;
+}
+
+.input-group .calendar input {
+    width: 150px;
+}
+
+.gender-group {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.gender-group input {
+    margin-right: 10px;
+}
+
+.gender-group label {
+    margin-right: 20px;
+}
+
+.gender-group input:checked + label {
+    font-weight: bold;
+    color: #1a3c6e;
+}
+
+.save-btn {
+    background-color: #1a3c6e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.bottom-buttons {
+    display: flex;
+    justify-content: flex-start;
+    width: 800px;
+    margin-bottom: 20px;
+}
+
+.bottom-buttons button {
+    background-color: #1a3c6e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#favorites-content, #orders-content, #password-content {
+    display: none;
+}
