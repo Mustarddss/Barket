@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NU BARKET</title>
+    
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css">
+
+    <!--FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <!--HEADER-->
+    <header>
+        <div class="navTop">
+            <div class="navLogo">
+                <a href="#" class="logo"><img src="Project Logo.png" alt=""></a>
+                <span class="logoText">NU Barket</span>
+            </div>
+            <div class="nav-icon">
+                <a href="#"><i class='bx bx-cart'></i></a>
+                <a href="#"><i class='bx bx-shopping-bag'></i></a>
+                <a href="#"><i class='bx bx-user'></i></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <div class="container">
+            <div class="sidebar">
+                <button class="tab active" data-tab="account">Account Information</button>
+                <button class="tab" data-tab="favorites">Favorites</button>
+                <button class="tab" data-tab="orders">My Orders</button>
+                <button class="tab" data-tab="password">Change Password</button>
+            </div>
+            <div class="content">
+                <div id="account-content">
+                    <div class="user-info">
+                        <img src="https://via.placeholder.com/100" alt="User Image">
+                        <h2>Username</h2>
+                    </div>
+                    <div class="input-group">
+                        <label>First Name:</label>
+                        <input type="text" value="">
+                        <span class="change">Change</span>
+                    </div>
+                    <div class="input-group">
+                        <label>Last Name:</label>
+                        <input type="text" value="">
+                        <span class="change">Change</span>
+                    </div>
+                    <div class="input-group calendar">
+                        <label>Birthdate:</label>
+                        <input type="date" value="2000-01-01">
+                        <span class="change">Change</span>
+                    </div>
+                    <div class="input-group">
+                        <label>Contact Number:</label>
+                        <input type="tel" value="">
+                        <span class="change">Change</span>
+                    </div>
+                    <div class="gender-group">
+                        <input type="radio" id="male" name="gender" value="for him">
+                        <label for="male">For Him</label>
+                        <input type="radio" id="female" name="gender" value="for her" checked>
+                        <label for="female">For Her</label>
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address:</label>
+                        <input type="email" value="">
+                        <span class="change">Change</span>
+                    </div>
+                    <button class="save-btn">SAVE</button>
+                </div>
+                <div id="favorites-content">
+                    <h2>Favorites</h2>
+                    <p>This section will list all your favorite items.</p>
+                </div>
+                <div id="orders-content">
+                    <h2>My Orders</h2>
+                    <p>This section will list all your orders.</p>
+                </div>
+                <div id="password-content">
+                    <h2>Change Password</h2>
+                    <p>Enter new password and confirm it here.</p>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-buttons">
+            <button onclick="startSelling()">Start Selling</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+    
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.content > div');
+    
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+    
+                contents.forEach(content => content.style.display = 'none');
+                document.getElementById(tab.dataset.tab + '-content').style.display = 'block';
+            });
+        });
+    
+        function logout() {
+            window.location.href = 'project.html'; // Redirect to landing page
+        }
+    
+        function startSelling() {
+            alert('Start Selling feature activated!');
+            // Add your start selling logic here
+        }
+    </script>
+</body>
+</html>
