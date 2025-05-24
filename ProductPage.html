@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My E-commerce Store</title>
+  <link rel="stylesheet" href="ProductPage.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="/Users/julianaortiz/SCHOOL/untitled folder/image/Project Logo.png" alt="NU Basket Logo">
+    <h3>NU Barket</h3>
+    <input type="text" placeholder="What are you looking for?">
+    <span class="cart-icon">
+      <img src="/Users/julianaortiz/SCHOOL/untitled folder/icons/shopping cart.png" alt="Basket Icon">
+    </span>
+    <span class="profile-icon">
+      <img src="/Users/julianaortiz/SCHOOL/untitled folder/icons/profile.png" alt="Cart Icon">
+    </span>
+  </header>
+
+  <!-- Product Section -->
+  <div class="product-container">
+    <div class="product-image-main">
+      <img id="mainImage" src="https://preview.redd.it/malupiton-hahaha-v0-wmgp2872lfpd1.jpg?width=640&crop=smart&auto=webp&s=ce5a8d6c65c53fbfd7f68b28d2934adc73157a76" alt="Product Main Image">
+
+      <!-- Product Thumbnails -->
+      <div class="product-thumbnails">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-XEj66ChDp28IkneMpv1RHzgvvM1iNwd5iA&s" alt="Thumbnail 1" onclick="changeMainImage(this)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2qUw7QfjxgB_ojOz_TdfWfdZx2cssKq3PFA&s" alt="Thumbnail 2" onclick="changeMainImage(this)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2qUw7QfjxgB_ojOz_TdfWfdZx2cssKq3PFA&s" alt="Thumbnail 3" onclick="changeMainImage(this)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2qUw7QfjxgB_ojOz_TdfWfdZx2cssKq3PFA&s" alt="Thumbnail 4" onclick="changeMainImage(this)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2qUw7QfjxgB_ojOz_TdfWfdZx2cssKq3PFA&s" alt="Thumbnail 5" onclick="changeMainImage(this)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2qUw7QfjxgB_ojOz_TdfWfdZx2cssKq3PFA&s" alt="Thumbnail 6" onclick="changeMainImage(this)">
+      </div>
+    </div>
+
+    <!-- Product Details -->
+    <div class="product-details">
+      <h1>Flowy puff longsleeve dress/top</h1>
+      <div class="total-rating"><br> ★ 4.8 (234 reviews)</div>
+      <div class="price">₱125</div>
+
+      <!-- Color Selection -->
+      <div class="selection-group">
+        <strong>Color:</strong>
+        <div class="options" id="colorOptions">
+          <div class="color-option white" onclick="selectOption(this, 'color')"></div>
+          <div class="color-option black" onclick="selectOption(this, 'color')"></div>
+          <div class="color-option red" onclick="selectOption(this, 'color')"></div>
+          <div class="color-option green" onclick="selectOption(this, 'color')"></div>
+        </div>
+      </div>
+
+      <!-- Size Selection -->
+      <div class="selection-group">
+        <strong>Size:</strong>
+        <div class="options" id="sizeOptions">
+          <div class="size-option" onclick="selectOption(this, 'size')">S</div>
+          <div class="size-option" onclick="selectOption(this, 'size')">M</div>
+          <div class="size-option" onclick="selectOption(this, 'size')">L</div>
+          <div class="size-option" onclick="selectOption(this, 'size')">XL</div>
+        </div>
+      </div>
+
+      <!-- Quantity Selection -->
+      <div class="quantity-selection">
+        <strong>Quantity:</strong>
+        <div class="quantity-control">
+          <button onclick="updateQuantity(-1)">-</button>
+          <span id="quantity">1</span>
+          <button onclick="updateQuantity(1)">+</button>
+        </div>
+      </div>
+
+      <!-- Add to Cart -->
+      <div class="add-to-cart-section">
+        <span class="material-symbols-outlined">favorite</span>
+        <button class="add-to-cart">ADD TO CART</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Seller Info & Featured Products -->
+  <div class="product-feature">
+    <div class="seller-info">
+      <div class="seller-left">
+        <img src="/Users/julianaortiz/SCHOOL/untitled folder/icons/profile.png" alt="seller-profile">
+        <span class="seller-name">Seller's Name</span>
+      </div>
+      <button class="visit-btn">Visit</button>
+    </div>
+
+    <h2>FEATURED</h2>
+    <div class="product-slider">
+      <div class="product-images">
+        <!-- Repeat featured product items -->
+        <div class="product-item">
+          <img src="https://via.placeholder.com/150" alt="Product 1">
+          <p>Flowy puff longsleeve dress/top</p>
+          <p>₱125</p>
+          <div class="total-rating">★★★★★</div>
+        </div>
+
+        <div class="product-item">
+          <img src="https://via.placeholder.com/150" alt="Product 1">
+          <p>Flowy puff longsleeve dress/top</p>
+          <p>₱125</p>
+          <div class="total-rating">★★★★★</div>
+        </div>
+
+        <div class="product-item">
+          <img src="https://via.placeholder.com/150" alt="Product 1">
+          <p>Flowy puff longsleeve dress/top</p>
+          <p>₱125</p>
+          <div class="total-rating">★★★★★</div>
+        </div>
+
+        <div class="product-item">
+          <img src="https://via.placeholder.com/150" alt="Product 1">
+          <p>Flowy puff longsleeve dress/top</p>
+          <p>₱125</p>
+          <div class="total-rating">★★★★★</div>
+        </div>
+
+        <div class="product-item">
+          <img src="https://via.placeholder.com/150" alt="Product 1">
+          <p>Flowy puff longsleeve dress/top</p>
+          <p>₱125</p>
+          <div class="total-rating">★★★★★</div>
+        </div>
+
+        <div class="product-item">
+          <img src="https://via.placeholder.com/150" alt="Product 1">
+          <p>Flowy puff longsleeve dress/top</p>
+          <p>₱125</p>
+          <div class="total-rating">★★★★★</div>
+        </div>
+
+        <div class="product-item">
+          <img src="https://via.placeholder.com/150" alt="Product 1">
+          <p>Flowy puff longsleeve dress/top</p>
+          <p>₱125</p>
+          <div class="total-rating">★★★★★</div>
+        </div>
+
+        <div class="product-item">
+          <img src="https://via.placeholder.com/150" alt="Product 1">
+          <p>Flowy puff longsleeve dress/top</p>
+          <p>₱125</p>
+          <div class="total-rating">★★★★★</div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Description -->
+  <div class="description-section">
+    <h2>DESCRIPTION</h2>
+    <div class="product-description">
+      <p>Flowy puff longsleeve dress/top Flowy puff longsleeve dress/top...</p>
+    </div>
+  </div>
+
+  <!-- Reviews -->
+  <div class="review-section">
+    <div class="product-review">
+      <div class="review-header">
+        <h3 class="customer-review">Customer Reviews:</h3>
+        <h3 class="total-number-rating">4.8/5</h3>
+        <div class="total-rating">★★★★★</div>
+      </div>
+      <button class="view-all-reviews">View All Reviews</button>
+    </div>
+
+    <div class="reviews">
+      <img src="/Users/julianaortiz/SCHOOL/untitled folder/icons/profile.png" alt="customer-profile">
+      <h3 class="customer-name"></h3>
+      <div class="rating">★★★★★</div>
+      <p class="product-item-review">item:</p>
+      <p class="product-review-description">item is good</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-cont">
+      <ul>
+        <li>
+          <div class="footer-logo">
+            <img src="/Users/julianaortiz/SCHOOL/untitled folder/image/Project Logo.png" alt="NU Barket Logo">
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>About NU Barket</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Return/Refund Policy</h3>
+      </div>
+      <div class="footer-column">
+        <h3>Customer Service</h3>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function changeMainImage(thumbnail) {
+      document.getElementById('mainImage').src = thumbnail.src;
+    }
+
+    function selectOption(element, type) {
+      const groupId = type === 'color' ? 'colorOptions' : 'sizeOptions';
+      document.querySelectorAll(`#${groupId} .${type}-option`).forEach(el => el.classList.remove('selected'));
+      element.classList.add('selected');
+    }
+
+    function updateQuantity(change) {
+      const quantityElement = document.getElementById('quantity');
+      let currentQuantity = parseInt(quantityElement.innerText);
+      currentQuantity += change;
+      if (currentQuantity < 1) currentQuantity = 1;
+      quantityElement.innerText = currentQuantity;
+    }
+
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', () => alert('Item added to cart!'));
+    });
+
+    document.querySelectorAll('.material-symbols-outlined').forEach(favorite => {
+      favorite.addEventListener('click', () => favorite.classList.toggle('favorited'));
+    });
+  </script>
+
+</body>
+</html>
