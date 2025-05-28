@@ -16,6 +16,17 @@ body {
     overflow: hidden;
 }
 
+.seller-login {
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    border-bottom: 1.6px solid rgb(101, 187, 245);
+    color: rgb(101, 187, 245);
+    text-decoration: none;
+    font-size: 14px;
+}
+
 .glass-container {
     position: relative;
     width: 470px;
