@@ -1,128 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NU BARKET</title>
-    
-    <!--CSS-->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>NU Barket - User Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
 
-    <!--FONT-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      margin-top: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .tab-button {
+      flex: 1;
+      padding: 15px;
+      cursor: pointer;
+      background: #eee;
+      border: none;
+      outline: none;
+      transition: background 0.3s;
+    }
+
+    .tab-button.active {
+      background: #007bff;
+      color: white;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    button.save-btn {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .logout-button, .delete-button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      display: block;
+    }
+
+    .logout-button {
+      background-color: #555;
+      color: white;
+    }
+
+    .delete-button {
+      background-color: #d9534f;
+      color: white;
+    }
+
+    .avatar-container {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .avatar-preview {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 10px auto;
+      background-color: #ddd;
+      cursor: pointer;
+    }
+
+    #avatar-input {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-    <!--HEADER-->
-    <header>
-        <div class="navTop">
-            <div class="navLogo">
-                <a href="#" class="logo"><img src="Project Logo.png" alt=""></a>
-                <span class="logoText">NU Barket</span>
-            </div>
-            <div class="nav-icon">
-                <a href="#"><i class='bx bx-cart'></i></a>
-                <a href="#"><i class='bx bx-shopping-bag'></i></a>
-                <a href="#"><i class='bx bx-user'></i></a>
-            </div>
-        </div>
-    </header>
 
-    <div class="main-wrapper">
-        <div class="container">
-            <div class="sidebar">
-                <button class="tab active" data-tab="account">Account Information</button>
-                <button class="tab" data-tab="favorites">Favorites</button>
-                <button class="tab" data-tab="orders">My Orders</button>
-                <button class="tab" data-tab="password">Change Password</button>
-            </div>
-            <div class="content">
-                <div id="account-content">
-                    <div class="user-info">
-                        <img src="https://via.placeholder.com/100" alt="User Image">
-                        <h2>Username</h2>
-                    </div>
-                    <div class="input-group">
-                        <label>First Name:</label>
-                        <input type="text" value="">
-                        <span class="change">Change</span>
-                    </div>
-                    <div class="input-group">
-                        <label>Last Name:</label>
-                        <input type="text" value="">
-                        <span class="change">Change</span>
-                    </div>
-                    <div class="input-group calendar">
-                        <label>Birthdate:</label>
-                        <input type="date" value="2000-01-01">
-                        <span class="change">Change</span>
-                    </div>
-                    <div class="input-group">
-                        <label>Contact Number:</label>
-                        <input type="tel" value="">
-                        <span class="change">Change</span>
-                    </div>
-                    <div class="gender-group">
-                        <input type="radio" id="male" name="gender" value="for him">
-                        <label for="male">For Him</label>
-                        <input type="radio" id="female" name="gender" value="for her" checked>
-                        <label for="female">For Her</label>
-                        <input type="radio" id="other" name="gender" value="other">
-                        <label for="other">Other</label>
-                    </div>
-                    <div class="input-group">
-                        <label>Email Address:</label>
-                        <input type="email" value="">
-                        <span class="change">Change</span>
-                    </div>
-                    <button class="save-btn">SAVE</button>
-                </div>
-                <div id="favorites-content">
-                    <h2>Favorites</h2>
-                    <p>This section will list all your favorite items.</p>
-                </div>
-                <div id="orders-content">
-                    <h2>My Orders</h2>
-                    <p>This section will list all your orders.</p>
-                </div>
-                <div id="password-content">
-                    <h2>Change Password</h2>
-                    <p>Enter new password and confirm it here.</p>
-                </div>
-            </div>
-        </div>
-        <div class="bottom-buttons">
-            <button onclick="startSelling()">Start Selling</button>
-            <button onclick="logout()">Logout</button>
-        </div>
+<div class="container">
+  <h1>User Profile - NU Barket</h1>
+
+  <div class="tabs">
+    <button class="tab-button active" onclick="showSection('account-info', event)">Account Information</button>
+    <button class="tab-button" onclick="showSection('favorites', event)">Favorites</button>
+    <button class="tab-button" onclick="showSection('orders', event)">Orders</button>
+    <button class="tab-button" onclick="showSection('password', event)">Change Password</button>
+  </div>
+
+  <div id="account-info" class="section active">
+    <h2>Account Information</h2>
+
+    <div class="avatar-container">
+      <img id="avatar-preview" class="avatar-preview" src="" alt="" onclick="document.getElementById('avatar-input').click();" />
+      <input type="file" id="avatar-input" accept="image/*" />
     </div>
-    
-    <script>
-        const tabs = document.querySelectorAll('.tab');
-        const contents = document.querySelectorAll('.content > div');
-    
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-    
-                contents.forEach(content => content.style.display = 'none');
-                document.getElementById(tab.dataset.tab + '-content').style.display = 'block';
-            });
-        });
-    
-        function logout() {
-            window.location.href = 'project.html'; // Redirect to landing page
-        }
-    
-        function startSelling() {
-            alert('Start Selling feature activated!');
-            // Add your start selling logic here
-        }
-    </script>
+
+    <input type="text" id="first-name" placeholder="First Name" />
+    <input type="text" id="last-name" placeholder="Last Name" />
+    <input type="email" id="email" placeholder="Email" />
+    <input type="text" id="phone" placeholder="Phone Number" />
+    <input type="text" id="address" placeholder="Address" />
+
+    <button class="save-btn" onclick="saveAccountInfo()">Save Changes</button>
+
+    <button id="logout-btn" class="logout-button">Logout</button>
+    <button id="delete-btn" class="delete-button">Delete Account</button>
+  </div>
+
+  <div id="favorites" class="section">
+    <h2>Favorites</h2>
+    <p>You have no favorite items yet.</p>
+  </div>
+
+  <div id="orders" class="section">
+    <h2>Orders</h2>
+    <p>No orders found.</p>
+  </div>
+
+  <div id="password" class="section">
+    <h2>Change Password</h2>
+    <input type="password" id="current-password" placeholder="Current Password" />
+    <input type="password" id="new-password" placeholder="New Password" />
+    <input type="password" id="confirm-password" placeholder="Confirm New Password" />
+    <button class="save-btn" onclick="changePassword()">Update Password</button>
+  </div>
+</div>
+
+<script>
+  function showSection(sectionId, event) {
+    const sections = document.querySelectorAll('.section');
+    const buttons = document.querySelectorAll('.tab-button');
+    sections.forEach(section => section.classList.remove('active'));
+    buttons.forEach(btn => btn.classList.remove('active'));
+    document.getElementById(sectionId).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  function validateName(name) {
+    return /^[a-zA-Z\s]+$/.test(name);
+  }
+
+  function validatePhone(phone) {
+    return /^\d+$/.test(phone);
+  }
+
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function saveAccountInfo() {
+    const firstName = document.getElementById('first-name').value.trim();
+    const lastName = document.getElementById('last-name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const address = document.getElementById('address').value.trim();
+
+    if (!firstName || !validateName(firstName)) {
+      alert("First Name: Only characters and spaces are allowed.");
+      return;
+    }
+    if (!lastName || !validateName(lastName)) {
+      alert("Last Name: Only characters and spaces are allowed.");
+      return;
+    }
+    if (!email || !validateEmail(email)) {
+      alert("Email: Must include '@' and a domain.");
+      return;
+    }
+    if (!phone || !validatePhone(phone)) {
+      alert("Phone Number: Only numbers are allowed.");
+      return;
+    }
+    if (!address) {
+      alert("Address: This field is required.");
+      return;
+    }
+
+    const avatarSrc = document.getElementById('avatar-preview').src || '';
+
+    const info = { firstName, lastName, email, phone, address, avatar: avatarSrc };
+    localStorage.setItem('userInfo', JSON.stringify(info));
+    alert("Account info saved successfully.");
+  }
+
+  function loadAccountInfo() {
+    const info = JSON.parse(localStorage.getItem('userInfo'));
+    if (info) {
+      document.getElementById('first-name').value = info.firstName || '';
+      document.getElementById('last-name').value = info.lastName || '';
+      document.getElementById('email').value = info.email || '';
+      document.getElementById('phone').value = info.phone || '';
+      document.getElementById('address').value = info.address || '';
+      const preview = document.getElementById('avatar-preview');
+      if (info.avatar) {
+        preview.src = info.avatar;
+        preview.style.backgroundColor = 'transparent';
+      } else {
+        preview.src = '';
+        preview.style.backgroundColor = '#ddd';
+      }
+    }
+  }
+
+  document.getElementById('avatar-input').addEventListener('change', function () {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const preview = document.getElementById('avatar-preview');
+        preview.src = e.target.result;
+        preview.style.backgroundColor = 'transparent';
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  function changePassword() {
+    const current = document.getElementById('current-password').value;
+    const newPass = document.getElementById('new-password').value;
+    const confirm = document.getElementById('confirm-password').value;
+
+    const storedPassword = localStorage.getItem('userPassword') || 'test123';
+
+    if (!current || !newPass || !confirm) {
+      alert("All password fields are required.");
+      return;
+    }
+
+    if (current !== storedPassword) {
+      alert("Current password is incorrect.");
+      return;
+    }
+
+    if (newPass !== confirm) {
+      alert("New passwords do not match.");
+      return;
+    }
+
+    localStorage.setItem('userPassword', newPass);
+    alert("Password updated successfully.");
+  }
+
+  document.getElementById('logout-btn').addEventListener('click', () => {
+    if (confirm("Are you sure you want to logout?")) {
+      window.location.href = "login.html";
+    }
+  });
+
+  document.getElementById('delete-btn').addEventListener('click', () => {
+    if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
+      localStorage.removeItem('userInfo');
+      localStorage.removeItem('userPassword');
+      alert("Account deleted successfully.");
+      window.location.href = "login.html";  // Redirect to login page after delete
+    }
+  });
+
+  window.onload = loadAccountInfo;
+</script>
+
 </body>
 </html>
