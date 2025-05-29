@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: 'Gambetta';
+  src: url(OTF/Gambetta-Regular.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Gambetta-Bold';
+  src: url(OTF/Gambetta-Bold.otf);
+}
+
+@font-face {
+  font-family: 'General';
+  src: url(general-sans/GeneralSans-Semibold.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url(Switzer/Switzer-Semibold.otf) format('truetype');
+}
+
+/* Header */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15%;
+  background-color: #143f77;
+  box-shadow: 0px 3px 15px #252934;
+}
+
+.navTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.navLogo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo img {
+  max-width: 110px;
+  height: 60px;
+  display: block;
+}
+
+.logoText {
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 25px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.ShopCart {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 700px;
+  margin: 0 20px;
+  justify-content: center;
+}
+
+.ShoppingCart-Text h3 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+}
+
+.nav-icon {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-icon a {
+  color: #ffffff;
+  font-size: 25px;
+  transition: all 0.3s ease;
+}
+
+.nav-icon a:hover {
+  transform: scale(1.1);
+  color: beige;
+}
+
+/* Content */
+.cart-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 20px auto;
+  background: #f5f5f5;
+  padding: 20px;
+  margin-top: 150px;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f5f5f5;
+}
+
+.cart-table thead {
+  background: #f5f5f5;
+  font-weight: bold;
+  text-align: left;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 15px 10px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.cart-table th {
+  font-size: 14px;
+  color: #333;
+}
+
+.cart-table td {
+  font-size: 14px;
+  color: #333;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.product-info img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.product-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.seller-name {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+.product-info p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.variation-toggle {
+  font-size: 12px;
+  color: #666;
+}
+
+.variation {
+  font-size: 12px;
+  color: #666;
+}
+
+.qty-control {
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-control button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.qty-control span {
+  font-size: 14px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.delete {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.delete {
+  color: #ff0000; /* Red color for the delete link text and icon */
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cart-footer {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f5f5f5;
+}
+
+.cart-footer label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.cart-footer .delete {
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.checkout {
+  background-color: #143f77;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.checkout:hover {
+  background-color: #0f2f5b;
+}
