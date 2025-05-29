@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NU Barket - Shopping Cart</title>
+  <link rel="stylesheet" href="Cart.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="navTop">
+      <div class="navLogo">
+        <a href="index.html" class="logo"><img src="Project Logo.png" alt="NU Barket Logo"></a>
+        <span class="logoText">NU Barket</span>
+      </div>
+      <div class="ShopCart">
+        <div class="ShoppingCart-Text">
+          <h3>Shopping Cart</h3>
+        </div>
+      </div>
+      <div class="nav-icon">
+        <a href="#"><i class='bx bx-cart'></i></a>
+        <a href="#"><i class='bx bx-shopping-bag'></i></a>
+        <a href="#"><i class='bx bx-user'></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="cart-container">
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th><input type="checkbox" id="selectAll"></th>
+          <th>Product</th>
+          <th>Variation</th>
+          <th>Quantity</th>
+          <th>Unit Price</th>
+          <th>Total Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items">
+        <!-- JavaScript will inject cart rows here -->
+      </tbody>
+    </table>
+
+    <div class="cart-footer">
+      <label><input type="checkbox" id="selectAllBottom"> Select all</label>
+      <a href="#" class="delete" onclick="deleteSelected()">Delete</a>
+      <div class="total" id="totalDisplay">Total (<span id="itemCount">0</span> item): ₱<span id="totalPrice">0</span></div>
+      <button class="checkout">Check Out</button>
+    </div>
+  </main>
+
+  <script>
+    function renderCart() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const container = document.getElementById("cart-items");
+      const totalDisplay = document.getElementById("totalDisplay");
+      const itemCountEl = document.getElementById("itemCount");
+      const totalPriceEl = document.getElementById("totalPrice");
+      let total = 0;
+
+      container.innerHTML = "";
+
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        // Safeguard for undefined price
+        const unitPrice = typeof item.price === 'number' ? item.price.toFixed(2) : '0.00';
+
+        container.innerHTML += `
+          <tr>
+            <td><input type="checkbox" class="item-checkbox" data-index="${index}"></td>
+            <td class="product-info">
+              <img src="${item.image}" alt="${item.name}">
+              <div>
+                <p class="seller-name">Maloi Recalde</p>
+                <p><strong>${item.name}</strong></p>
+              </div>
+            </td>
+            <td class="variation-select">
+              <select onchange="updateVariation(${index}, this)">
+                <option value="${item.color},${item.size}" selected>${item.color}, ${item.size}</option>
+                <option value="White, S">White, S</option>
+                <option value="White, M">White, M</option>
+                <option value="White, L">White, L</option>
+                <option value="White, XL">White, XL</option>
+                <option value="Black, S">Black, S</option>
+                <option value="Black, M">Black, M</option>
+                <option value="Black, L">Black, L</option>
+                <option value="Black, XL">Black, XL</option>
+                <option value="Red, S">Red, S</option>
+                <option value="Red, M">Red, M</option>
+                <option value="Red, L">Red, L</option>
+                <option value="Red, XL">Red, XL</option>
+                <option value="Green, S">Green, S</option>
+                <option value="Green, M">Green, M</option>
+                <option value="Green, L">Green, L</option>
+                <option value="Green, XL">Green, XL</option>
+              </select>
+            </td>
+            <td class="qty-control">
+              <button onclick="updateQty(${index}, -1)"><</button>
+              <span>${item.quantity}</span>
+              <button onclick="updateQty(${index}, 1)">></button>
+            </td>
+            <td>₱${unitPrice}</td>
+            <td>₱${itemTotal.toFixed(2)}</td>
+            <td><a href="#" class="delete" onclick="removeItem(${index})">Delete</a></td>
+          </tr>
+        `;
+      });
+
+      itemCountEl.textContent = cart.length;
+      totalPriceEl.textContent = total.toFixed(2);
+      totalDisplay.style.display = cart.length > 0 ? 'block' : 'none';
+    }
+
+    function updateQty(index, delta) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart[index].quantity += delta;
+      if (cart[index].quantity <= 0) cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+      updateTotals();
+    }
+
+    function updateVariation(index, select) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const [newColor, newSize] = select.value.split(',');
+      cart[index].color = newColor.trim();
+      cart[index].size = newSize.trim();
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+      updateTotals(); // Update totals after variation change
+    }
+
+    function removeItem(index) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+      updateTotals();
+    }
+
+    function deleteSelected() {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const checkboxes = document.querySelectorAll('.item-checkbox:checked');
+      const indices = Array.from(checkboxes).map(cb => parseInt(cb.dataset.index)).sort((a, b) => b - a);
+      indices.forEach(index => cart.splice(index, 1));
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+      updateTotals();
+    }
+
+    function updateTotals() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const checkboxes = document.querySelectorAll('.item-checkbox');
+      let count = 0;
+      let total = 0;
+
+      checkboxes.forEach((cb, index) => {
+        if (cb.checked) {
+          count++;
+          total += cart[index].price * cart[index].quantity;
+        }
+      });
+
+      const totalDisplay = document.getElementById("totalDisplay");
+      const itemCountEl = document.getElementById("itemCount");
+      const totalPriceEl = document.getElementById("totalPrice");
+
+      itemCountEl.textContent = count;
+      totalPriceEl.textContent = total.toFixed(2);
+      totalDisplay.style.display = count > 0 ? 'block' : 'none';
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderCart();
+
+      const selectAllTop = document.getElementById('selectAll');
+      const selectAllBottom = document.getElementById('selectAllBottom');
+
+      function toggleAll(checked) {
+        document.querySelectorAll('.item-checkbox').forEach(cb => cb.checked = checked);
+        updateTotals();
+      }
+
+      selectAllTop.addEventListener('change', e => {
+        toggleAll(e.target.checked);
+        selectAllBottom.checked = e.target.checked;
+      });
+
+      selectAllBottom.addEventListener('change', e => {
+        toggleAll(e.target.checked);
+        selectAllTop.checked = e.target.checked;
+      });
+
+      document.addEventListener('change', function (e) {
+        if (e.target.classList.contains('item-checkbox') || e.target.classList.contains('variation-select')) {
+          updateTotals();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
