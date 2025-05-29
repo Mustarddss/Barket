@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-commerce Store</title>
+    <link rel="stylesheet" href="CategoryPage.css">
+</head>
+<body>
+  <header>
+    <img src="/Users/julianaortiz/SCHOOL/untitled folder/image/Project Logo.png" alt="NU Basket Logo">
+    <h3>NU Barket</h3>
+    <input type="text" placeholder="What are you looking for?">
+    <span class="cart-icon">
+      <img src="/Users/julianaortiz/SCHOOL/untitled folder/icons/shopping cart.png" alt="Basket Icon">
+    </span>
+    <span class="profile-icon">
+      <img src="/Users/julianaortiz/SCHOOL/untitled folder/icons/profile.png" alt="Cart Icon">
+    </span>
+  </header>
+  
+  <div class="container">
+    <div class="category-header">
+      <div class="category">CLOTHING</div>
+      <div class="filters">
+        <div class="filter-dropdown">
+          <button class="filter-button">FILTER ▼</button>
+          <div class="filter-menu">
+            <div class="filter-section">
+              <h4>Size</h4>
+              <div class="size-options">
+                <label><input type="checkbox" name="size" value="XS"> XS</label>
+                <label><input type="checkbox" name="size" value="S"> S</label>
+                <label><input type="checkbox" name="size" value="M"> M</label>
+                <label><input type="checkbox" name="size" value="L"> L</label>
+                <label><input type="checkbox" name="size" value="XL"> XL</label>
+                <label><input type="checkbox" name="size" value="2XL"> 2XL</label>
+                <label><input type="checkbox" name="size" value="3XL"> 3XL</label>
+              </div>
+            </div>
+            <div class="filter-section">
+              <h4>Gender</h4>
+              <div class="gender-options">
+                <label><input type="radio" name="gender" value="him"> Male</label>
+                <label><input type="radio" name="gender" value="her" checked> Female</label>
+              </div>
+            </div>
+            <div class="filter-section">
+              <h4>Price</h4>
+              <div class="price-range">
+                <input type="number" placeholder="Min" min="0">
+                <span>-</span>
+                <input type="number" placeholder="Max" min="0">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Sort Dropdown Container -->
+        <div class="filter-dropdown">
+          <button class="filter-button" id="sortButton">SORT ▼</button>
+          <div class="filter-menu" id="sortMenu">
+            <div class="filter-section">
+              <div class="sort-options">
+                <label><input type="radio" name="sort" value="featured" checked> Featured</label>
+                <label><input type="radio" name="sort" value="newest"> Newest</label>
+                <label><input type="radio" name="sort" value="low-high"> Price: low to high</label>
+                <label><input type="radio" name="sort" value="high-low"> Price: high to low</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    <div class="product-grid">
+      <div class="product">
+        <span class="favorite">♥︎</span>
+        <img src="https://www.burgerking.com.ph/images/products/Cheesy%20Dip.webp?version=1.15.5.1742445351619&s=256x" alt="Flowy dress">
+        <div class="content">
+          <div class="name">Flowy puff longsleeve dress/top</div>
+          <div class="size">Size: Medium</div>
+          <div class="price">₱ 125</div>
+          <div class="rating">★★★★★</div>
+        </div>
+        <button class="add-to-cart">ADD TO CART</button>
+      </div>
+      <div class="product">
+        <span class="favorite">♥︎</span>
+        <img src="https://www.burgerking.com.ph/images/products/Cheesy%20Dip.webp?version=1.15.5.1742445351619&s=256x" alt="Tube Top">
+        <div class="content">
+          <div class="name">Tube Topfedfefefefefefefefefefefefefefefe</div>
+          <div class="size">Size: Large/XL</div>
+          <div class="price">₱ 100</div>
+          <div class="rating">★★★★☆</div>
+        </div>
+        <button class="add-to-cart">ADD TO CART</button>
+      </div>
+      <div class="product">
+        <span class="favorite">♥︎</span>
+        <img src="https://www.burgerking.com.ph/images/products/Cheesy%20Dip.webp?version=1.15.5.1742445351619&s=256x" alt="Leopard Top">
+        <div class="content">
+          <div class="name">Leopard Top</div>
+          <div class="size">Size: XS/S</div>
+          <div class="price">₱ 220</div>
+          <div class="rating">★★★★★</div>
+        </div>
+        <button class="add-to-cart">ADD TO CART</button>
+      </div>
+      <div class="product">
+        <span class="favorite">♥︎</span>
+        <img src="https://www.burgerking.com.ph/images/products/Cheesy%20Dip.webp?version=1.15.5.1742445351619&s=256x" alt="Square Neck Top">
+        <div class="content">
+          <div class="name">Square Neck Top</div>
+          <div class="size">Size: XS/S</div>
+          <div class="price">₱ 150</div>
+          <div class="rating">★★★★★</div>
+        </div>
+        <button class="add-to-cart">ADD TO CART</button>
+      </div>
+      <div class="product">
+        <span class="favorite">♥︎</span>
+        <img src="https://www.burgerking.com.ph/images/products/Cheesy%20Dip.webp?version=1.15.5.1742445351619&s=256x" alt="Square Neck Top">
+        <div class="content">
+          <div class="name">5</div>
+          <div class="size">Size: XS/S</div>
+          <div class="price">₱ 150</div>
+          <div class="rating">★★★★★</div>
+        </div>
+        <button class="add-to-cart">ADD TO CART</button>
+      </div>
+      <div class="product">
+        <span class="favorite">♥︎</span>
+        <img src="https://www.burgerking.com.ph/images/products/Cheesy%20Dip.webp?version=1.15.5.1742445351619&s=256x" alt="Square Neck Top">
+        <div class="content">
+          <div class="name">6</div>
+          <div class="size">Size: XS/S</div>
+          <div class="price">₱ 150</div>
+          <div class="rating">★★★★★</div>
+        </div>
+        <button class="add-to-cart">ADD TO CART</button>
+      </div>
+      <div class="product">
+        <span class="favorite">♥︎</span>
+        <img src="https://www.burgerking.com.ph/images/products/Cheesy%20Dip.webp?version=1.15.5.1742445351619&s=256x" alt="Square Neck Top">
+        <div class="content">
+          <div class="name">7</div>
+          <div class="size">Size: XS/S</div>
+          <div class="price">₱ 150</div>
+          <div class="rating">★★★★★</div>
+        </div>
+        <button class="add-to-cart">ADD TO CART</button>
+      </div>
+
+      <div class="product">
+        <span class="favorite">♥︎</span>
+        <img src="https://www.burgerking.com.ph/images/products/Cheesy%20Dip.webp?version=1.15.5.1742445351619&s=256x" alt="Square Neck Top">
+        <div class="content">
+          <div class="name">8</div>
+          <div class="size">Size: XS/S</div>
+          <div class="price">₱ 150</div>
+          <div class="rating">★★★★★</div>
+        </div>
+        <button class="add-to-cart">ADD TO CART</button>
+      </div>
+
+      <div class="product">
+        <span class="favorite">♥︎</span>
+        <img src="https://www.burgerking.com.ph/images/products/Cheesy%20Dip.webp?version=1.15.5.1742445351619&s=256x" alt="Square Neck Top">
+        <div class="content">
+          <div class="name">9</div>
+          <div class="size">Size: XS/S</div>
+          <div class="price">₱ 150</div>
+          <div class="rating">★★★★★</div>
+        </div>
+        <button class="add-to-cart">ADD TO CART</button>
+      </div>
+
+      <div class="product">
+        <span class="favorite">♥︎</span>
+        <img src="https://www.burgerking.com.ph/images/products/Cheesy%20Dip.webp?version=1.15.5.1742445351619&s=256x" alt="Square Neck Top">
+        <div class="content">
+          <div class="name">10</div>
+          <div class="size">Size: XS/S</div>
+          <div class="price">₱ 150</div>
+          <div class="rating">★★★★★</div>
+        </div>
+        <button class="add-to-cart">ADD TO CART</button>
+      </div>
+
+
+    </div>
+
+    <!-- Floating Button -->
+    <button class="floating-btn" onclick="togglePopup()">☰</button>
+
+    <!-- Popup Categories Window -->
+    <div class="popup" id="categoryPopup">
+      <h2>BEST SELLING</h2>
+      <h2>NEW ARRIVAL</h2>
+
+      <h3>CATEGORIES</h3>
+      <!-- Dropdown: Fashion & Accessories -->
+      <div class="category-header" onclick="toggleDropdown('fashionDropdown', this)">
+        Fashion & Accessories <span class="arrow">▶</span>
+      </div>
+      <ul class="dropdown" id="fashionDropdown">
+        <li>Shirt</li>
+        <li>T-Shirt</li>
+        <li>Blouse</li>
+        <li>Croptop</li>
+        <li>Polo Shirt</li>
+        <li>Leggings</li>
+        <li>Trouser</li>
+        <li>Short</li>
+        <li>Accessories</li>
+        <li>Footwear</li>
+      </ul>
+
+      <!-- Dropdown: Food & Drinks -->
+      <div class="category-header" onclick="toggleDropdown('foodDropdown', this)">
+        Food & Drinks <span class="arrow">▶</span>
+      </div>
+      <ul class="dropdown" id="foodDropdown">
+        <li>Snacks</li>
+        <li>Beverages</li>
+        <li>Meal Packs</li>
+      </ul>
+
+      <!-- Dropdown: Beauty & Care -->
+      <div class="category-header" onclick="toggleDropdown('beautyDropdown', this)">
+        Beauty & Care <span class="arrow">▶</span>
+      </div>
+      <ul class="dropdown" id="beautyDropdown">
+        <li>Skincare</li>
+        <li>Haircare</li>
+        <li>Cosmetics</li>
+      </ul>
+
+      <!-- Dropdown: Toys & Hobbies -->
+      <div class="category-header" onclick="toggleDropdown('toysDropdown', this)">
+        Toys & Hobbies <span class="arrow">▶</span>
+      </div>
+      <ul class="dropdown" id="toysDropdown">
+        <li>Puzzles</li>
+        <li>Action Figures</li>
+        <li>Board Games</li>
+      </ul>
+
+      <!-- Dropdown: Gadget -->
+      <div class="category-header" onclick="toggleDropdown('gadgetDropdown', this)">
+        Gadget <span class="arrow">▶</span>
+      </div>
+      <ul class="dropdown" id="gadgetDropdown">
+        <li>Smartphones</li>
+        <li>Accessories</li>
+        <li>Wearables</li>
+      </ul>
+
+      <!-- Static Category -->
+      <div class="category-header">Others</div>
+    </div>
+
+
+  </div>
+
+
+  <script>
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Item added to cart!');
+      });
+    });
+    document.querySelectorAll('.favorite').forEach(favorite => {
+      favorite.addEventListener('click', () => {
+        favorite.style.color = favorite.style.color === 'rgb(233, 30, 99)' ? '#ccc' : '#e91e63';
+      });
+    });
+
+    // Toggle filter menu visibility
+    const filterButton = document.querySelector('.filter-button');
+    const filterMenu = document.querySelector('.filter-menu');
+    filterButton.addEventListener('click', () => {
+      filterMenu.style.display = filterMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Close filter menu when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!filterButton.contains(event.target) && !filterMenu.contains(event.target)) {
+        filterMenu.style.display = 'none';
+      }
+    });
+  </script>
+
+  <script>
+  function togglePopup() {
+    document.getElementById('categoryPopup').classList.toggle('show');
+  }
+
+  document.addEventListener('click', function(e) {
+    const popup = document.getElementById('categoryPopup');
+    const button = document.querySelector('.floating-btn');
+    if (!popup.contains(e.target) && !button.contains(e.target)) {
+      popup.classList.remove('show');
+    }
+  });
+
+  function toggleDropdown(id, headerEl) {
+    const dropdown = document.getElementById(id);
+    const arrow = headerEl.querySelector('.arrow');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    arrow.classList.toggle('down');
+  }
+
+  // Highlight clicked list item
+  document.querySelectorAll('.dropdown li').forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.stopPropagation(); // Prevent dropdown from closing if needed
+      const siblings = this.parentElement.querySelectorAll('li');
+      siblings.forEach(sib => sib.classList.remove('highlight'));
+      this.classList.add('highlight');
+    });
+  });
+
+</script>
+
+
+  <script>
+    const sortButton = document.getElementById('sortButton');
+    const sortMenu = document.getElementById('sortMenu');
+
+    sortButton.addEventListener('click', () => {
+      sortMenu.style.display = sortMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Close sort menu when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!sortButton.contains(event.target) && !sortMenu.contains(event.target)) {
+        sortMenu.style.display = 'none';
+      }
+    });
+  </script>
+
+  <footer>
+    <div class="footer-cont">
+    <ul>
+                <li>
+                    <div class="footer-logo">
+                        <img src="/Users/julianaortiz/SCHOOL/untitled folder/image/Project Logo.png" alt="NU Barket Logo">
+                    </div>
+                </li>
+            </ul>
+    </div>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>About NU Barket</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Return/Refund Policy</h3>
+        </div>
+        <div class="footer-column">
+            <h3>Customer Service</h3>
+        </div>
+    </div>
+  </footer>
+</body>
+</html>
