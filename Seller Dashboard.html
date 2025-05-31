@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seller Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-content">
+      <!-- Left: Logo + Brand -->
+      <div class="nav-left">
+        <img src="Project Logo.png" alt="Project Logo" class="logo" />
+        <h1 class="brand-name">NU <span class="highlight">Barket</span></h1>
+      </div>
+
+      <!-- Center: Nav Links -->
+      <ul class="nav-links">
+        <li><a href="#" class="active">Dashboard</a></li>
+        <li><a href="#">Your Products</a></li>
+        <li><a href="#">Orders</a></li>
+      </ul>
+
+      <!-- Right: Add Button + Profile -->
+      <div class="nav-right">
+        <button class="add-btn">Add New Product</button>
+        <img src="blank-profile-picture.png" alt="Profile" class="profile-pic" />
+      </div>
+    </div>
+  </nav>
+
+  <!-- Welcome Banner Section -->
+  <section class="welcome-banner">
+    <div class="welcome-content">
+      <div class="welcome-text">
+        <h2>Welcome back, <span class="username">Seller's Username</span></h2>
+        <p>Here's Your Current Sales Overview</p>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Cards Section -->
+  <section class="dashboard-cards">
+    <div class="cards-container">
+      <!-- Total Sales Card -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon sales-icon">
+            <img src="sales_icon.png" alt="Sales Icon" />
+          </span>
+          <h3>Total Sales</h3>
+        </div>
+        <div class="card-content">
+          <p class="card-value">₱350</p>
+          <p class="card-change positive">↑ 13.2% vs last month</p>
+        </div>
+      </div>
+
+      <!-- Customer Satisfaction Card -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon satisfaction-icon">
+            <img src="feedback_icon.png" alt="Feedback Icon" />
+          </span>
+          <h3>Customer Satisfaction</h3>
+        </div>
+        <div class="card-content">
+          <p class="card-value">95%</p>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 95%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Total Orders Card -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon orders-icon">
+            <img src="order_icon.png" alt="Order Icon" />
+          </span>
+          <h3>Total Orders</h3>
+        </div>
+        <div class="card-content">
+          <p class="card-value">1023</p>
+          <p class="card-change neutral">5% vs last month</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Selling Products Section -->
+  <section class="top-products">
+    <div class="products-container">
+      <div class="products-header">
+        <h2>Top Selling Products</h2>
+        <span class="more-options">⋮</span>
+      </div>
+      <div class="products-table-wrapper">
+        <table class="products-table">
+          <thead>
+            <tr>
+              <th></th> <!-- For product image -->
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Sold</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="placeholder-product.png" alt="Product Image" class="product-image" /></td>
+              <td>Product Name</td>
+              <td>₱120</td>
+              <td>120pcs</td>
+              <td><span class="status-icon"></span></td>
+            </tr>
+            <tr>
+              <td><img src="placeholder-product.png" alt="Product Image" class="product-image" /></td>
+              <td>Product Name</td>
+              <td>₱120</td>
+              <td>120pcs</td>
+              <td><span class="status-icon"></span></td>
+            </tr>
+            <tr>
+              <td><img src="placeholder-product.png" alt="Product Image" class="product-image" /></td>
+              <td>Product Name</td>
+              <td>₱120</td>
+              <td>120pcs</td>
+              <td><span class="status-icon"></span></td>
+            </tr>
+            <!-- Add more rows to ensure scrolling -->
+            <tr>
+              <td><img src="placeholder-product.png" alt="Product Image" class="product-image" /></td>
+              <td>Product Name</td>
+              <td>₱120</td>
+              <td>120pcs</td>
+              <td><span class="status-icon"></span></td>
+            </tr>
+            <tr>
+              <td><img src="placeholder-product.png" alt="Product Image" class="product-image" /></td>
+              <td>Product Name</td>
+              <td>₱120</td>
+              <td>120pcs</td>
+              <td><span class="status-icon"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  
+    <!--FOOTER-->
+    <footer>
+        <div class="footer-cont">
+        <ul>
+                    <li>
+                        <div class="footer-logo">
+                            <img src="Project Logo.png" alt="NU Barket Logo">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About NU Barket</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Return/Refund Policy</h3>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
