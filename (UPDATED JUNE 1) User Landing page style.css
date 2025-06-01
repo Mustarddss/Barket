@@ -27,6 +27,7 @@
     font-family: 'Switzer';
     src: url(Switzer/Switzer-Semibold.otf) format('truetype');
 }
+
 /* Header */
 header {
     position: fixed;
@@ -149,21 +150,18 @@ header {
     text-transform: uppercase;
     margin-bottom: 0;
     text-shadow: 4px 3px 20px rgb(28, 28, 114);
-    
 }
 
-.banner-text h4{
+.banner-text h4 {
     font-family: 'Gambetta';
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 20px;
     text-shadow: 0px 0px 5px black;
-    margin-top: -75px;     
-    margin-bottom: 5; 
+    margin-top: -75px;
+    margin-bottom: 5;
     letter-spacing: 3px;
-
 }
-
 
 .banner-text p {
     font-family: 'Gambetta';
@@ -171,73 +169,72 @@ header {
     font-weight: 500;
     margin-bottom: 20px;
     text-shadow: 0px 0px 5px black;
-    margin-top: -40px;        
-    margin-bottom: 0;  
+    margin-top: -40px;
+    margin-bottom: 0;
     letter-spacing: 10px;
 }
 
 .centered-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 80px); /* Adjust for header height */
-  padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px); /* Adjust for header height */
+    padding: 40px;
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .text-content {
-  flex: 1;
-  text-align: center;
+    flex: 1;
+    text-align: center;
 }
 
 .text-content h1 {
-  font-size: 100px;
-  margin-bottom: 0px;
-  font-family: 'Switzer';
-  color: #143f77;
-  text-shadow: 0px 0px 2px black;
+    font-size: 100px;
+    margin-bottom: 0px;
+    font-family: 'Switzer';
+    color: #143f77;
+    text-shadow: 0px 0px 2px black;
 }
 
 .text-content p {
-  font-size: 22px;
-  margin-bottom: -10px;
-  font-family: 'Gambetta';
+    font-size: 22px;
+    margin-bottom: -10px;
+    font-family: 'Gambetta';
 }
 
 .shop-button {
-  padding: 16px 32px;
-  font-size: 18px;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  margin-top: -10px;
-  border-radius: 5px;
-  display: inline-block;
-  cursor: pointer;
+    padding: 16px 32px;
+    font-size: 18px;
+    background-color: #143f77;
+    color: #fff;
+    border: none;
+    margin-top: -10px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
 }
 
 .image-content {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .image-content img {
-  max-width: 90%;
-  height: auto;
-  transform: scale(1.1);
+    max-width: 90%;
+    height: auto;
+    transform: scale(1.1);
 }
-
 
 /* Prevent content overlap with fixed header */
 body {
@@ -279,7 +276,6 @@ body {
     }
 }
 
-
 .icons {
     position: absolute;
     bottom: 20px;
@@ -294,8 +290,6 @@ body {
     cursor: pointer;
 }
 
-
-
 .floating-btn {
     position: fixed;
     bottom: 20px;
@@ -306,17 +300,20 @@ body {
     border: none;
     background-color: #007bff;
     color: white;
-    font-size: 30px;
+    font-size: 24px; /* Adjusted for better icon sizing */
     cursor: pointer;
     z-index: 1001;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .popup {
     position: fixed;
-    bottom: 90px; /* Adjust based on button height */
-    left: 20px;
-    width: 280px;
+    bottom: 90px; /* Positioned above the floating button (60px height + 10px gap) */
+    left: 20px; /* Aligned with the floating button */
+    width: 300px;
     max-height: 400px;
     background-color: #d3e8f9de;
     color: black;
@@ -334,9 +331,9 @@ body {
 
 @media (max-width: 600px) {
     .popup {
-        width: 90%;
-        left: 5%;
-        bottom: 80px;
+        width: 80%; /* Slightly narrower for small screens */
+        bottom: 80px; /* Adjusted to maintain gap above button */
+        left: 20px; /* Keep aligned with button */
     }
 }
 
@@ -347,7 +344,7 @@ body {
     padding-bottom: 5px;
 }
 
-  .popup h3 {
+.popup h3 {
     margin-top: 15px;
     font-size: 16px;
 }
@@ -361,7 +358,6 @@ body {
     align-items: center;
 }
 
-  
 .dropdown {
     list-style-type: none;
     padding-left: 15px;
@@ -388,9 +384,8 @@ body {
     transform: rotate(90deg);
 }
 
-
-/* PRODUCT*/
-.recom-text h2{
+/* PRODUCT */
+.recom-text h2 {
     color: #111;
     font-size: 28px;
     text-transform: capitalize;
@@ -399,66 +394,103 @@ body {
     font-family: 'Switzer';
 }
 
-.products{
+.products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
     margin: 30px;
 }
 
-.row{
+.category-card {
     position: relative;
-    transition: all .40s;
+    background: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.row img{
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.category-card img {
     width: 100%;
-    height: auto;
-    transition: all .40s;
-}
-.row img:hover{
-    transform: scale(0.9);
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-
-.product-text h5{
+.product-text h5 {
     position: absolute;
-    top: 13px;
-    left: 13px;
+    top: 28px;
+    left: 28px;
     color: #fff;
     font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
     background-color: #27b737;
     padding: 3px 10px;
-    border-radius: 2px ;
+    border-radius: 2px;
 }
-.heart-icon{
+
+.heart-icon {
     position: absolute;
-    right: 0;
+    top: 28px;
+    right: 28px;
     font-size: 20px;
 }
-.heart-icon:hover{
+
+.heart-icon:hover {
     color: #EE1C47;
 }
-.rating{
+
+.category-text h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #333;
+    font-family: 'Gambetta-Bold';
+}
+
+.rating {
     color: #ff8c00;
     font-size: 18px;
+    margin: 5px 0;
 }
-.price h4{
-    color: #111;
-    font-size: 16px;
-    text-transform: capitalize;
-    font-weight: 400;
-}
-.price p{
-    color: #151515;
+
+.category-text p {
     font-size: 14px;
+    color: #151515;
     font-weight: 600;
+    margin-bottom: 15px;
+    font-family: 'Gambetta';
 }
 
-/*BANNER 2*/
+.category-card .shop-button {
+    padding: 8px 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 2px solid #244ac9;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 0 auto;
+    color: #0c3994;
+}
 
+.category-card .shop-button:hover {
+    background: #8a8c94;
+}
+
+/* BANNER 2 */
 .banner2 {
     position: relative;
     width: 100%;
@@ -495,10 +527,9 @@ body {
     margin-top: 30px;
     margin-bottom: 30px;
     text-shadow: 0px 0px 5px rgb(51, 54, 80);
-
 }
 
-.shop-button {
+.banner-text2 .shop-button {
     margin-top: 20px;
     margin-right: 250px;
     padding: 10px 20px;
@@ -513,17 +544,15 @@ body {
     transition: background-color 0.3s;
 }
 
-.shop-button:hover {
+.banner-text2 .shop-button:hover {
     background: rgba(255, 255, 255, 0.2);
 }
 
-/*CATEGORIES*/
-
+/* CATEGORIES */
 .check-this-out {
     padding: 30px;
     background-color: #f0f7ff;
     font-family: Arial, sans-serif;
-    
 }
 
 .check-this-out h2 {
@@ -548,11 +577,12 @@ body {
     border-radius: 15px;
     padding: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .category-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .category-card img {
@@ -598,7 +628,6 @@ body {
     background: #e0e0e0;
 }
 
-
 .location-icon {
     position: absolute;
     top: 15px;
@@ -614,8 +643,7 @@ body {
     font-size: 16px;
 }
 
-/*FOOTER*/
-
+/* FOOTER */
 footer {
     background-color: #143f77;
     color: white;
