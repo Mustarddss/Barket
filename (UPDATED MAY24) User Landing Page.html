@@ -45,336 +45,206 @@
         <div class="banner-text">
             <h4>Welcome to </h4>
             <h1>NU BARKET</h1>
-            <p>Your one-stop shop for all things Bulldogs</p>
+            <p>Everything all you need, all in one NU place</p>
         </div>
     </div>
     
     <section class="centered-section">
-  <div class="container">
-    <div class="text-content">
-    <p>Discover our latest collection of urban wear.</p>
-      <h1>New Arrival</h1>
-      <button class="shop-button">Shop Now</button>
-    </div>
-    <div class="image-content">
-      <img src="Pants model.png" alt="Product Image">
-    </div>
-  </div>
-</section>
+        <div class="container">
+            <div class="text-content">
+                <p>Discover our latest collection of urban wear.</p>
+                <h1>New Arrival</h1>
+                <button class="shop-button">Shop Now</button>
+            </div>
+            <div class="image-content">
+                <img src="Pants model.png" alt="Product Image">
+            </div>
+        </div>
+    </section>
 
-
-
-
-    <script>
-        function togglePopup() {
-          const popup = document.getElementById('categoryPopup');
-          popup.classList.toggle('show');
-        }
-        
-        // Close popup if clicked outside
-        document.addEventListener('click', function (e) {
-          const popup = document.getElementById('categoryPopup');
-          const menuBtn = document.querySelector('.nav-menu-btn');
-        
-          if (!popup.contains(e.target) && !menuBtn.contains(e.target)) {
-            popup.classList.remove('show');
-          }
-        });
-        
-        // Toggle dropdowns
-        function toggleDropdown(id, headerEl) {
-          const dropdown = document.getElementById(id);
-          const arrow = headerEl.querySelector('.arrow');
-          if (dropdown) {
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-          }
-          if (arrow) {
-            arrow.classList.toggle('down');
-          }
-        }
-    </script>
-        
     <!-- Popup Categories Window -->
     <div class="popup" id="categoryPopup">
-      <h2>BEST SELLING</h2>
-      <h2>NEW ARRIVAL</h2>
-
-      <h3>CATEGORIES</h3>
-      <!-- Dropdown: Fashion & Accessories -->
-      <div class="category-header" onclick="toggleDropdown('fashionDropdown', this)">
-        Fashion & Accessories <span class="arrow">▶</span>
-      </div>
-      <ul class="dropdown" id="fashionDropdown">
-        <li>Shirt</li>
-        <li>T-Shirt</li>
-        <li>Blouse</li>
-        <li>Croptop</li>
-        <li>Polo Shirt</li>
-        <li>Leggings</li>
-        <li>Trouser</li>
-        <li>Short</li>
-        <li>Accessories</li>
-        <li>Footwear</li>
-      </ul>
-
-      <!-- Dropdown: Food & Drinks -->
-      <div class="category-header" onclick="toggleDropdown('foodDropdown', this)">
-        Food & Drinks <span class="arrow">▶</span>
-      </div>
-      <ul class="dropdown" id="foodDropdown">
-        <li>Snacks</li>
-        <li>Beverages</li>
-        <li>Meal Packs</li>
-      </ul>
-
-      <!-- Dropdown: Beauty & Care -->
-      <div class="category-header" onclick="toggleDropdown('beautyDropdown', this)">
-        Beauty & Care <span class="arrow">▶</span>
-      </div>
-      <ul class="dropdown" id="beautyDropdown">
-        <li>Skincare</li>
-        <li>Haircare</li>
-        <li>Cosmetics</li>
-      </ul>
-
-      <!-- Dropdown: Toys & Hobbies -->
-      <div class="category-header" onclick="toggleDropdown('toysDropdown', this)">
-        Toys & Hobbies <span class="arrow">▶</span>
-      </div>
-      <ul class="dropdown" id="toysDropdown">
-        <li>Puzzles</li>
-        <li>Action Figures</li>
-        <li>Board Games</li>
-      </ul>
-
-      <!-- Dropdown: Gadget -->
-      <div class="category-header" onclick="toggleDropdown('gadgetDropdown', this)">
-        Gadget <span class="arrow">▶</span>
-      </div>
-      <ul class="dropdown" id="gadgetDropdown">
-        <li>Smartphones</li>
-        <li>Accessories</li>
-        <li>Wearables</li>
-      </ul>
-
-      <!-- Static Category -->
-      <div class="category-header">Others</div>
+        <h2>BEST SELLING</h2>
+        <h2>NEW ARRIVAL</h2>
+        <h3>CATEGORIES</h3>
+        <!-- Dropdown: Fashion & Accessories -->
+        <div class="category-header" onclick="toggleDropdown('fashionDropdown', this)">
+            Fashion & Accessories <span class="arrow">▶</span>
+        </div>
+        <ul class="dropdown" id="fashionDropdown">
+            <li>Shirt</li>
+            <li>T-Shirt</li>
+            <li>Blouse</li>
+            <li>Croptop</li>
+            <li>Polo Shirt</li>
+            <li>Leggings</li>
+            <li>Trouser</li>
+            <li>Short</li>
+            <li>Accessories</li>
+            <li>Footwear</li>
+        </ul>
+        <!-- Dropdown: Food & Drinks -->
+        <div class="category-header" onclick="toggleDropdown('foodDropdown', this)">
+            Food & Drinks <span class="arrow">▶</span>
+        </div>
+        <ul class="dropdown" id="foodDropdown">
+            <li>Snacks</li>
+            <li>Beverages</li>
+            <li>Meal Packs</li>
+        </ul>
+        <!-- Dropdown: Beauty & Care -->
+        <div class="category-header" onclick="toggleDropdown('beautyDropdown', this)">
+            Beauty & Care <span class="arrow">▶</span>
+        </div>
+        <ul class="dropdown" id="beautyDropdown">
+            <li>Skincare</li>
+            <li>Haircare</li>
+            <li>Cosmetics</li>
+        </ul>
+        <!-- Dropdown: Toys & Hobbies -->
+        <div class="category-header" onclick="toggleDropdown('toysDropdown', this)">
+            Toys & Hobbies <span class="arrow">▶</span>
+        </div>
+        <ul class="dropdown" id="toysDropdown">
+            <li>Puzzles</li>
+            <li>Action Figures</li>
+            <li>Board Games</li>
+        </ul>
+        <!-- Dropdown: Gadget -->
+        <div class="category-header" onclick="toggleDropdown('gadgetDropdown', this)">
+            Gadget <span class="arrow">▶</span>
+        </div>
+        <ul class="dropdown" id="gadgetDropdown">
+            <li>Smartphones</li>
+            <li>Accessories</li>
+            <li>Wearables</li>
+        </ul>
+        <!-- Static Category -->
+        <div class="category-header">Others</div>
     </div>
 
     <!--PRODUCT-->
-
     <section class="trending-products" id="trending">
         <div class="recom-text">
-            <h2>Recommended For You </h2>
+            <h2>Recommended For You</h2>
         </div>
-
         <div class="products">
-            <div class="row">
+            <div class="category-card">
                 <img src="small-clothe 1.jpg" alt="">
                 <div class="product-text">
-                    <h5> Sale </h5>
+                    <h5>Sale</h5>
                 </div>
                 <div class="heart-icon">
-                    <i class='bx  bx-heart'></i> 
+                    <i class='bx bx-heart'></i>
                 </div>
-                <div class="rating">
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bxs-star-half'></i> 
-                </div>
-
-                <div class="price">
-                    <h4>Long Sleeves</h4>
+                <div class="category-text">
+                    <h3>Long Sleeves</h3>
+                    <div class="rating">
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
                     <p>₱50</p>
+                    <button class="shop-button" onclick="this.classList.toggle('clicked')">Add to Cart</button>
                 </div>
-
-
             </div>
-
-            <div class="row">
+            <div class="category-card">
                 <img src="small-clothe 2.jpg" alt="">
                 <div class="product-text">
-                    <h5> NEW </h5>
+                    <h5>NEW</h5>
                 </div>
                 <div class="heart-icon">
-                    <i class='bx  bx-heart'></i> 
+                    <i class='bx bx-heart'></i>
                 </div>
-                <div class="rating">
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bxs-star-half'></i> 
-                </div>
-
-                <div class="price">
-                    <h4>Long Sleeves</h4>
+                <div class="category-text">
+                    <h3>Long Sleeves</h3>
+                    <div class="rating">
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
                     <p>₱60</p>
+                    <button class="shop-button" onclick="this.classList.toggle('clicked')">Add to Cart</button>
                 </div>
-
-
             </div>
-
-            <div class="row">
+            <div class="category-card">
                 <img src="small-clothe 3.jpg" alt="">
-                <div class="product-text">
-                </div>
+                <div class="product-text"></div>
                 <div class="heart-icon">
-                    <i class='bx  bx-heart'></i> 
+                    <i class='bx bx-heart'></i>
                 </div>
-                <div class="rating">
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bxs-star-half'></i> 
-                </div>
-
-                <div class="price">
-                    <h4>Cover Up</h4>
+                <div class="category-text">
+                    <h3>Cover Up</h3>
+                    <div class="rating">
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
                     <p>₱60</p>
+                    <button class="shop-button" onclick="this.classList.toggle('clicked')">Add to Cart</button>
                 </div>
-
-
             </div>
-
-            <div class="row">
+            <div class="category-card">
                 <img src="small-clothe 4.jpg" alt="">
                 <div class="product-text">
-                    <h5> Sale </h5>
+                    <h5>Sale</h5>
                 </div>
                 <div class="heart-icon">
-                    <i class='bx  bx-heart'></i> 
+                    <i class='bx bx-heart'></i>
                 </div>
-                <div class="rating">
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bxs-star-half'></i> 
-                </div>
-
-                <div class="price">
-                    <h4>Long Sleeves</h4>
+                <div class="category-text">
+                    <h3>Long Sleeves</h3>
+                    <div class="rating">
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
                     <p>₱50</p>
+                    <button class="shop-button" onclick="this.classList.toggle('clicked')">Add to Cart</button>
                 </div>
-
-
             </div>
-
-            <div class="row">
+            <div class="category-card">
                 <img src="medium-clothe.jpg" alt="">
                 <div class="product-text">
-                    <h5> New </h5>
+                    <h5>New</h5>
                 </div>
                 <div class="heart-icon">
-                    <i class='bx  bx-heart'></i> 
+                    <i class='bx bx-heart'></i>
                 </div>
-                <div class="rating">
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bxs-star-half'></i> 
-                </div>
-
-                <div class="price">
-                    <h4>Blouse</h4>
+                <div class="category-text">
+                    <h3>Blouse</h3>
+                    <div class="rating">
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
                     <p>₱70</p>
+                    <button class="shop-button" onclick="this.classList.toggle('clicked')">Add to Cart</button>
                 </div>
-
-
-            </div>
-
-            <div class="row">
-                <img src="medium-clothe 2.jpg" alt="">
-                <div class="product-text">
-                </div>
-                <div class="heart-icon">
-                    <i class='bx  bx-heart'></i> 
-                </div>
-                <div class="rating">
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bxs-star-half'></i> 
-                </div>
-
-                <div class="price">
-                    <h4>Puff Blouse</h4>
-                    <p>₱70</p>
-                </div>
-
-
-            </div>
-
-            <div class="row">
-                <img src="large-clothe.jpg" alt="">
-                <div class="product-text">
-                    <h5> Sale </h5>
-                </div>
-                <div class="heart-icon">
-                    <i class='bx  bx-heart'></i> 
-                </div>
-                <div class="rating">
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bxs-star-half'></i> 
-                </div>
-
-                <div class="price">
-                    <h4>Shirt</h4>
-                    <p>₱80</p>
-                </div>
-
-
-            </div>
-            <div class="row">
-                <img src="small-clothe 1.jpg" alt="">
-                <div class="product-text">
-                    <h5> Sale </h5>
-                </div>
-                <div class="heart-icon">
-                    <i class='bx  bx-heart'></i> 
-                </div>
-                <div class="rating">
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bx-star'></i> 
-                    <i class='bx  bxs-star-half'></i> 
-                </div>
-
-                <div class="price">
-                    <h4>Shirt</h4>
-                    <p>₱80</p>
-                </div>
-
-
             </div>
         </div>
-
     </section>
 
-    <script>
-
-    </script>
-
-     <!--BANNER 2-->
-     <div class="banner2">
+    <!--BANNER 2-->
+    <div class="banner2">
         <div class="banner-text2">
-          <p>Fan favorites and top picks</p>
-          <h1>BEST SELLING</h1>
-          <button class="shop-button">Shop Now</button>
+            <p>Fan favorites and top picks</p>
+            <h1>BEST SELLING</h1>
+            <button class="shop-button">Shop Now</button>
         </div>
-      </div>
+    </div>
 
-      <!--CATEGORIES-->
+    <!--CATEGORIES-->
     <section class="check-this-out">
         <h2>Check This Out</h2>
         <div class="categories">
@@ -416,14 +286,14 @@
     <!--FOOTER-->
     <footer>
         <div class="footer-cont">
-        <ul>
-                    <li>
-                        <div class="footer-logo">
-                            <img src="Project Logo.png" alt="NU Barket Logo">
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <ul>
+                <li>
+                    <div class="footer-logo">
+                        <img src="Project Logo.png" alt="NU Barket Logo">
+                    </div>
+                </li>
+            </ul>
+        </div>
         <div class="footer-container">
             <div class="footer-column">
                 <h3>About NU Barket</h3>
@@ -444,7 +314,35 @@
         </div>
     </footer>
 
+    <!-- Floating Button to Trigger Popup -->
+    <button class="floating-btn" onclick="togglePopup2()"><i class='bx bx-menu'></i></button>
 
-
+    <script>
+        function togglePopup2() {
+            const popup = document.getElementById('categoryPopup');
+            popup.classList.toggle('show');
+        }
+        
+        // Close popup if clicked outside
+        document.addEventListener('click', function (e) {
+            const popup = document.getElementById('categoryPopup');
+            const menuBtn = document.querySelector('.floating-btn');
+            if (!popup.contains(e.target) && !menuBtn.contains(e.target)) {
+                popup.classList.remove('show');
+            }
+        });
+        
+        // Toggle dropdowns
+        function toggleDropdown(id, headerEl) {
+            const dropdown = document.getElementById(id);
+            const arrow = headerEl.querySelector('.arrow');
+            if (dropdown) {
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            }
+            if (arrow) {
+                arrow.classList.toggle('down');
+            }
+        }
+    </script>
 </body>
 </html>
