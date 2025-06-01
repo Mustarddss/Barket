@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10%;
+  background-color: #ffffff;
+}
+
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo img {
+    max-width: 110px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.school {
+  color: #143f77;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.barket {
+  color: #ffed00;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.nav-center {
+    font-family: 'Arial', sans-serif;
+    margin-left: 250px;
+    display: flex;
+    gap: 60px;
+    cursor: pointer;
+}
+
+.nav-center a {
+  margin-top: 10px;
+}
+
+.nav-center a:hover {
+  color: #143f77;
+}
+
+.dboard {
+  color: black;
+}
+
+.products {
+  color: black;
+}
+
+.orders-btn {
+  color: #143f77;
+}
+
+.nav-center button {
+    background-color: #143f77;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.nav-center button:hover {
+    background-color: #0f2a5b;
+}
+
+.nav-right {
+  position: absolute;
+  right: 130px;
+}
+
+.nav-right img {
+    max-width: 80px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.bg-img img {
+  display: flex;
+  width: 100%;
+  height: 35vh;
+  object-fit: cover;
+  position: relative;
+  top: 85px;
+}
+
+.bg-img h1 {
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+  font-size: 75px;
+  text-align: center;
+  cursor: default;
+}
+
+.container {
+  position: absolute;
+  top: 31%;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 50px auto;
+  background-color: #ffffff;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.calendar-icon {
+  font-family: 'Arial', sans-serif;
+  display: inline-flex;
+  margin-left: 30px;
+  align-items: center;
+  gap: 6px;
+  background-color: #f5f2ed;
+  padding: 0 8px;
+  border-radius: 7px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+}
+
+.icon {
+  margin-top: 7px;
+  font-size: 23px;
+}
+
+.arrow {
+  margin-top: 7px;
+  margin-left: 13px;
+  font-size: 23px;
+}
+
+#date-picker {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  z-index: 10;
+}
+
+.calendar-icon.active #date-picker {
+  display: block;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+  position: absolute;
+  right: 23.5%;
+  top: 20px;
+}
+
+.menu-filter {
+  border: solid 1px #a6a6a6;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 23px;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.filter {
+  border: solid 1px #a6a6a6;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 23px;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.menu-filter i {
+  margin-top: 5px;
+}
+
+.filter i {
+  margin-top: 5px;
+}
+
+.search-bar {
+  position: absolute;
+  right: 3%; 
+  top: 20px;
+  align-items: center;
+  max-width: 700px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 50px;
+  width: 100%;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 8px 12px 8px 36px;
+  border: solid 1px #a6a6a6;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-bar a {
+  font-size: 22px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  position: absolute;
+  left: 8px;
+  top: 20%;
+}
+
+table {
+  position: absolute;
+  left: 15px;
+  font-family: 'Arial', sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 100px;
+}
+
+thead {
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+th {
+  padding: 10px;
+  text-align: center;
+  cursor: default;
+}
+
+.tbl input {
+  cursor: pointer;
+}
+
+.up-arrow{
+  display: block;
+  position: absolute;
+  top: 10%;
+  margin-left: 4px;
+}
+
+.down-arrow{
+  display: block;
+  position: absolute;
+  top: 40%;
+  margin-left: 4px;
+}
