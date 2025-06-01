@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link rel="stylesheet" href="orders.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <div class="nav-top">
+            <div class="nav-logo">
+                <img src="Project Logo.png" alt="NU Barket Logo">
+                <span class="school">NU</span>
+                <span class="barket">Barket</span>
+            </div>
+            <!--Menu: Center-->
+            <div class="nav-center">
+                <a href="seller-dashboard.html" class="dboard">Dashboard</a>
+                <a href="your-products.html" class="products">Your Products</a>
+                <a href="orders.html" class="orders-btn">Orders</a>
+                <button>Add New Product</button>
+            </div>
+            <!--Menu: Right-->
+            <div class="nav-right">
+                <img src="profile.png" alt="Profile Picture" class="profile-pic">
+            </div>
+        </div>
+    </header>
+
+    <!--Page Title-->
+    <div class="page-title">
+        <div class="bg-img">
+            <img src="NU-Dasma.jpg" alt="Background Image">
+            <h1>Orders</h1>
+        </div>
+    </div>
+
+    <!--Orders Section-->
+    <section class="orders-section">
+        <div class="container">
+            <div class="date-calendar">
+                <div class="calendar-icon" onclick="toggleDatePicker()">
+                    <span class="icon"><i class='bx bx-calendar-detail'></i></span>
+                    <span class="label" id="selected-date">Today</span>
+                    <span class="arrow"><i class='bx bx-caret-up'></i></span>
+                    <input type="date" id="date-picker" onchange="updateLabel()" style="display: none;">
+                </div>
+            </div>
+
+                <div class="filters">
+                    <span class="menu-filter"><i class='bx  bx-menu-filter'></i></span> 
+                    <span class="filter"><i class='bx  bx-filter'></i></span> 
+                </div>
+
+                <div class="search-bar">
+                    <div class="search">
+                        <a href="#"><i class='bx bx-search'></i></a>
+                        <input type="text">
+                    </div>
+                </div>
+            <div class="orders-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="tbl"><input type="checkbox"/></th>
+                            <th class="tbl">Order</th>
+                            <th class="tbl-sortable">
+                                Date
+                                <i class="bx bx-caret-up up-arrow"></i>
+                                <i class="bx bx-caret-down down-arrow"></i>
+                            </th>
+                            <th class="tbl">Customer</th>
+                            <th class="tbl">Payment</th>
+                            <th class="tbl">Items</th>
+                            <th class="tbl">Total</th>
+                            <th class="tbl">Fulfillment</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </section>
+<script>
+    function toggleDatePicker() {
+        const dateInput = document.getElementById('date-picker');
+        dateInput.showPicker(); // Best method in modern browsers
+    }
+
+    function updateLabel() {
+        const input = document.getElementById('date-picker');
+        const label = document.getElementById('selected-date');
+        const selectedDate = new Date(input.value);
+
+        if (!isNaN(selectedDate)) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            label.textContent = selectedDate.toLocaleDateString(undefined, options);
+        }
+    }
+</script>
+</body>
+</html>
