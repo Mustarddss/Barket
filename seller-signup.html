@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NU Barket Seller SignUp</title>
+    <link rel="stylesheet" href="seller-signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body> 
+    <div class="glass-container">
+        <div class="logo">
+            <img src="Project Logo.png" alt="Logo">
+        </div>
+        <div class="logo-text">
+             <span>NU Barket</span>
+        </div>
+
+        <h2>Register Here!</h2>
+        <form>
+            <div class="input-group">
+                <input type="text" required>
+                <label>First Name</label>
+            </div>
+
+            <div class="input-group">
+                <input type="text" required>
+                <label>Last Name</label>
+            </div>
+
+            <div class="input-group">
+                <input type="text" required>
+                <label>Student Number</label>
+            </div>
+
+            <div class="input-group">
+                <input type="text" required>
+                <label>School Email</label>
+            </div>
+
+            <div class="password-group">
+                <input type="password" id="password" required>
+                <label>Password</label>
+                <i class='bx bx-eye eye-icon' onclick="togglePassword(this, 'password')"></i>
+            </div>
+
+            <div class="password-group">
+                <input type="password" id="confirm-password" required>
+                <label>Confirm Password</label>
+                <i class='bx bx-eye eye-icon' onclick="togglePassword(this, 'confirm-password')"></i>
+            </div>
+
+            <button type="submit" class="register-btn">Register</button>
+            <div class="login-link">
+                <p>Already have an account? <a href="seller-login.html">Login</a></p>
+        </form>
+    </div>
+<script>
+    function togglePassword(icon, inputId) {
+        const input = document.getElementById(inputId);
+        const isHidden = input.type === "password";
+
+        input.type = isHidden ? "text" : "password";
+        icon.classList.toggle('bx-eye');
+        icon.classList.toggle('bx-eye-closed');
+}
+</script>
+</body>
+</html>
