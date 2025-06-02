@@ -71,9 +71,28 @@ body {
     margin-bottom: 30px;
 }
 
+.password-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
 .input-group input {
     width: 100%;
     padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    outline: none;
+    border-radius: 35px;
+    font-size: 16px;
+    color: #000000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.password-group input {
+    width: 100%;
+    padding: 15px 20px;
+    padding-right: 50px; /* Space for the eye icon */
     background: rgba(255, 255, 255, 0.2);
     border: none;
     outline: none;
@@ -88,12 +107,32 @@ body {
     color: rgba(0, 0, 0, 0.7);
 }
 
+.password-group input::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+}
+
 .input-group input:focus {
     background: rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
+.password-group input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
 .input-group label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: rgba(4, 4, 4, 0.8);
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.password-group label {
     position: absolute;
     top: 50%;
     left: 20px;
@@ -114,6 +153,28 @@ body {
     padding: 2px 8px;
     border-radius: 10px;
     color:#000000;
+}
+
+.password-group input:focus + label,
+.password-group input:valid + label {
+    top: 0;
+    left: 15px;
+    font-size: 12px;
+    color: #143f77;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 8px;
+    border-radius: 10px;
+    color:#000000;
+}
+
+.eye-icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
 }
 
 .remember-forgot {
