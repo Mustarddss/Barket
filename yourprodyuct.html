@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Products</title>
+  <link rel="stylesheet" href="your-products.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSS7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+  <header>
+    <div class="navTop">
+      <div class="navLogo">
+        <div class="logo">
+          <img src="Project Logo.png" alt="NU Logo">
+          <span class="school">NU</span>
+          <span class="store">Barket</span>
+        </div>
+      </div>
+      <div class="nav-icon">
+        <a href="Seller Dashboard.html">Dashboard</a>
+        <a href="your-products.html">Your Products</a>
+        <a href="orders.html">Orders</a>
+        <button class="add-product-btn1">Add New Product</button>
+        <a href="#"><img src="download (1).jpg" alt="Profile" class="profile-pic"></a>
+      </div>
+    </div>
+  </header>
+  
+  <div class="products-header">
+    <h2 id="page-title">Your Products</h2>
+    <button class="add-product-btn">Add New Product</button>
+    <div class="search">
+        <a href="#"><i class='bx bx-search'></i></a>
+        <input type="text" placeholder="Search..." class="searchInput">
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="content">
+      <table class="products-table">
+        <thead>
+          <tr>
+            <th><input type="checkbox" id="selectAll" onclick="toggleSelectAll()"></th>
+            <th>Product Name</th>
+            <th>Inventory</th>
+            <th>Status</th>
+            <th>Price</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="productList">
+          <tr>
+            <td><input type="checkbox" class="select-product"></td>
+            <td><input type="text" value="Product Name" disabled></td>
+            <td><input type="text" value="10 in stock" disabled></td>
+            <td>
+              <select class="status" onchange="updateStatus(this)" disabled>
+                <option value="active" selected>Active</option>
+                <option value="inactive">Inactive</option>
+                <option value="draft">Draft</option>
+                <option value="out-of-stock">Out of Stock</option>
+              </select>
+            </td>
+            <td><input type="text" value="$20" disabled></td>
+            <td>
+              <a href="#" class="edit-btn" onclick="toggleEdit(this)">Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="select-product"></td>
+            <td><input type="text" value="Product Name" disabled></td>
+            <td><input type="text" value="20 in stock" disabled></td>
+            <td>
+              <select class="status" onchange="updateStatus(this)" disabled>
+                <option value="active">Active</option>
+                <option value="inactive" selected>Inactive</option>
+                <option value="draft">Draft</option>
+                <option value="out-of-stock">Out of Stock</option>
+              </select>
+            </td>
+            <td><input type="text" value="$15" disabled></td>
+            <td>
+              <a href="#" class="edit-btn" onclick="toggleEdit(this)">Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="select-product"></td>
+            <td><input type="text" value="Product Name" disabled></td>
+            <td><input type="text" value="13 in stock" disabled></td>
+            <td>
+              <select class="status" onchange="updateStatus(this)" disabled>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+                <option value="draft">Draft</option>
+                <option value="out-of-stock">Out of Stock</option>
+              </select>
+            </td>
+            <td><input type="text" value="$20" disabled></td>
+            <td>
+              <a href="#" class="edit-btn" onclick="toggleEdit(this)">Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="select-product"></td>
+            <td><input type="text" value="Product Name" disabled></td>
+            <td><input type="text" value="Out of stock" disabled></td>
+            <td>
+              <select class="status" onchange="updateStatus(this)" disabled>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+                <option value="draft">Draft</option>
+                <option value="out-of-stock" selected>Out of Stock</option>
+              </select>
+            </td>
+            <td><input type="text" value="$25" disabled></td>
+            <td>
+              <a href="#" class="edit-btn" onclick="toggleEdit(this)">Edit</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="table-actions">
+        <button class="save-btn" onclick="saveAllEdits()">Save All</button>
+        <button class="delete-btn" onclick="deleteSelected()">Delete Selected</button>
+      </div>
+      <div class="recent-deleted">
+        <h3>Recent Deleted</h3>
+        <ul id="deletedList">
+          <li>No recent deletions.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updateStatus(select) {
+      const statusCell = select.parentElement;
+      statusCell.className = 'status ' + select.value;
+    }
+
+    function toggleEdit(link) {
+      const row = link.parentElement.parentElement;
+      const cells = row.getElementsByTagName('td');
+      const inputs = row.querySelectorAll('input:not(.select-product), select');
+
+      // Enable editing
+      for (let i = 1; i < cells.length - 1; i++) {
+        const input = cells[i].querySelector('input, select');
+        input.disabled = false;
+      }
+    }
+
+    function saveAllEdits() {
+      const rows = document.querySelectorAll('#productList tr');
+      rows.forEach(row => {
+        const cells = row.getElementsByTagName('td');
+        const inputs = row.querySelectorAll('input:not(.select-product), select');
+
+        // Disable editing
+        for (let i = 1; i < cells.length - 1; i++) {
+          const input = cells[i].querySelector('input, select');
+          input.disabled = true;
+        }
+      });
+    }
+
+    function toggleSelectAll() {
+      const selectAll = document.getElementById('selectAll');
+      const checkboxes = document.querySelectorAll('.select-product');
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = selectAll.checked;
+      });
+    }
+
+    function deleteSelected() {
+      const checkboxes = document.querySelectorAll('.select-product:checked');
+      const deletedList = document.getElementById('deletedList');
+
+      if (checkboxes.length === 0) {
+        alert('Please select at least one product to delete.');
+        return;
+      }
+
+      // Clear "No recent deletions" message
+      if (deletedList.children[0].textContent === 'No recent deletions.') {
+        deletedList.innerHTML = '';
+      }
+
+      checkboxes.forEach(checkbox => {
+        const row = checkbox.parentElement.parentElement;
+        const productName = row.cells[1].querySelector('input').value;
+        
+        // Add to recent deleted
+        const li = document.createElement('li');
+        li.textContent = productName;
+        deletedList.appendChild(li);
+        
+        // Remove row
+        row.remove();
+      });
+
+      // If no rows remain, add placeholder row
+      if (document.querySelectorAll('#productList tr').length === 0) {
+        const tbody = document.getElementById('productList');
+        const tr = document.createElement('tr');
+        tr.innerHTML = '<td colspan="6">No products available.</td>';
+        tbody.appendChild(tr);
+      }
+
+      // Uncheck select all
+      document.getElementById('selectAll').checked = false;
+    }
+  </script>
+
+  <!--FOOTER-->
+  <footer>
+    <div class="footer-cont">
+      <ul>
+        <li>
+          <div class="footer-logo">
+            <img src="Project Logo.png" alt="NU Barket Logo">
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>About NU Barket</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Return/Refund Policy</h3>
+      </div>
+      <div class="footer-column">
+        <h3>Customer Service</h3>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
