@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add New Products</title>
+        <link rel="stylesheet" href="add-product.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+        <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <!--Header-->
+        <header>
+            <div class="nav-top">
+                <div class="nav-logo">
+                    <img src="Project Logo.png" alt="NU Barket Logo">
+                    <span class="school">NU</span>
+                    <span class="barket">Barket</span>
+                </div>
+                <!--Menu: Center-->
+                <div class="nav-center">
+                    <a href="seller-dashboard.html" class="dboard">Dashboard</a>
+                    <a href="your-products.html" class="products">Your Products</a>
+                    <a href="orders.html" class="orders-btn">Orders</a>
+                </div>
+                <!--Menu: Right-->
+                <div class="nav-right">
+                    <img src="profile.png" alt="Profile Picture" class="profile-pic">
+                </div>
+            </div>
+        </header>
+        <!--Editing Section-->
+        <section class="editing-section">
+            <div class="add_product">
+                <h1>Add New Product</h1>
+                <select class="category" id="category" onchange="loadItemTypes()">
+                    <option value="" disabled selected hidden>Category</option>
+
+                    <optgroup label="Clothing & Accessories">
+                        <option value="mens">Men's Clothing</option>
+                        <option value="womens">Women's Clothing</option>
+                        <option value="kids_girls">Kid's Girls Clothing</option>
+                        <option value="kids_boys">Kid's Boys Clothing</option>
+                    </optgroup>
+
+                    <option value="foods_drinks">Foods & Drinks</option>
+                    <option value="gadgets">Gadget</option>
+                </select>
+
+                <select class="item-type" id="itemType">
+                    <option value="" disabled selected hidden>Item Type</option>
+                </select>
+            </div>
+        </section>
+        <!--Products Description, etc.-->
+        <section class="products-section">
+          <div class="product-name">
+            <label for="name">Product Name</label>
+            <input type="text"></input>
+          </div>
+          <div class="product-description">
+            <label for="description">Product Description</label>
+            <textarea></textarea>
+          </div>
+
+          <div class="form">
+            <label>Stock Quantity</label>
+            <div class="stock-control">
+              <button type="button"><i class='bx bx-minus'></i></button>
+              <input type="number" value="1" min="0">
+              <button type="button"><i class='bx bx-plus'></i></button>
+            </div>
+
+            <label>Color</label>
+            <div class="color-control">
+              <input type="color" value="#000000">
+              <button type="color" class="add-color"><i class='bx bx-plus'></i></button>
+            </div>
+
+            <select class="size-gender_status">
+              <option disabled selected hidden>Size</option>
+              <option>XS</option>
+              <option>Small</option>
+              <option>Medium</option>
+              <option>Large</option>
+              <option>XL</option>
+            </select>
+
+            <select class="size-gender_status">
+              <option disabled selected hidden>Gender</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Unisex</option>
+            </select>
+
+            <label class="image-upload">
+              <div class="image-box"><i class='bx bx-plus'></i>
+              <input type="file" multiple accept="image/*" style="display: none;">
+            </div>
+            </label>
+            <p>Multiple Images Allowed</p>
+
+            <input type="text" class="price" placeholder="Price">
+
+            <select class="size-gender_status">
+              <option disabled selected hidden>Status</option>
+              <option>Active</option>
+              <option>Inactive</option>
+            </select>
+          </div>
+        </section>
+        <div class="buttons">
+          <div class="draft-btn">
+            <button type="button" class="draft">Save as Draft</button>
+          </div>
+          <div class="upload-btn">
+            <button type="button" class="upload">Upload Product</button>
+        </div>
+    <script>
+        const data = {
+  mens: {
+    "Tops": ["T-Shirts", "Shirts", "Polo & Casual", "Knitwear", "Other"],
+    "Bottoms": ["Pants/Trouser", "Jeans", "Shorts", "Sweatpants", "Other"],
+    "Outerwear": ["Jackets", "Coats", "Blazers & Suits", "Casual", "Sporty Outerwear", "Other"],
+    "Underwear": ["Boxers", "Boxer Briefs", "Briefs", "Sleep Shorts", "Other"]
+  },
+  womens: {
+    "Tops": ["T-Shirts", "Blouses", "Crop Top", "Long Sleeve", "Knitwear", "Other"],
+    "Bottoms": ["Trouser & Slacks", "Jeans", "Skirts", "Shorts", "Leggings", "Other"],
+    "Outerwear": ["Jackets", "Coats", "Blazers & Suits", "Casual", "Sporty Outerwear", "Other"],
+    "Underwear": ["Bras", "Panties", "Bralettes", "Shapewear", "Other"]
+  },
+  kids_girls: {
+    "Tops": ["T-Shirts", "Blouses", "Tank Tops", "Long Sleeve", "Sweaters & Cardigans", "Other"],
+    "Bottoms": ["Skirts", "Shorts", "Jeans", "Trousers", "Leggings", "Other"],
+    "Dresses & Jumpsuits": ["Casual Dresses", "Party Dresses", "Jumpsuits & Rompers", "Other"],
+    "Outerwear": ["Jackets", "Coats", "Hoodies", "Raincoats", "Other"],
+    "Underwear": ["Baby Bras", "Panties", "Undershirts", "Other"]
+  },
+  kids_boys: {
+    "Tops": ["T-Shirts", "Polo Shirts", "Tank Tops", "Long Sleeve", "Sweaters & Hoodies", "Other"],
+    "Bottoms": ["Shorts", "Jeans", "Jogger Pants", "Trousers", "Other"],
+    "Outerwear": ["Jackets", "Coats", "Vests", "Raincoats", "Other"],
+    "Underwear": ["Briefs", "Boxers", "Undershirts", "Other"]
+  },
+  foods_drinks: {
+    "Snacks": ["Chips", "Crackers", "Popcorn", "Biscuits", "Cookies"],
+    "Beverages": ["Bottled Water", "Soda", "Juice", "Coffee", "Energy Drinks"],
+    "Dairy": ["Milk", "Cheese", "Yogurt"],
+  },
+  gadgets: {
+    "Smartphones": ["Iphone", "Android Phones", "Feature Phones"],
+    "Laptops": ["Acer", "Dell", "HP", "Macbook", "Other"],
+    "Accessories": ["Chargers", "Cases", "Headphones", "Cables", "Other"]
+  }
+};
+  function loadItemTypes() {
+    const category = document.getElementById("category").value;
+    const itemType = document.getElementById("itemType");
+    itemType.innerHTML = '<option value="" disabled selected hidden>Item Type</option>';
+
+    const categoryData = data[category];
+
+    if (categoryData) {
+      for (const groupLabel in categoryData) {
+        const group = document.createElement("optgroup");
+        group.label = groupLabel;
+
+        const items = categoryData[groupLabel];
+        if (items.length === 0) {
+          // Just one item under this group
+          const singleOption = document.createElement("option");
+          singleOption.textContent = groupLabel;
+          singleOption.value = groupLabel.toLowerCase().replace(/ /g, "_");
+          itemType.appendChild(singleOption);
+        } else {
+          items.forEach(sub => {
+            const option = document.createElement("option");
+            option.textContent = sub;
+            option.value = sub.toLowerCase().replace(/ /g, "_");
+            group.appendChild(option);
+          });
+          itemType.appendChild(group);
+        }
+      }
+    }
+  }
+</script>
+
+
+    </body>
+</html>
