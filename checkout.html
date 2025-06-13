@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NU Barket - Checkout</title>
+  <link rel="stylesheet" href="Checkout.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSS7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="navTop">
+      <div class="navLogo">
+        <a href="index.html" class="logo"><img src="Project Logo.png" alt="NU Barket Logo"></a>
+        <span class="logoText">NU Barket</span>
+      </div>
+      <div class="navSearch">
+        <div class="checkoutText">CHECK OUT</div>
+      </div>
+      <div class="nav-icon">
+        <a href="cart.html"><i class='bx bx-cart'></i></a>
+        <a href="#"><i class='bx bx-shopping-bag'></i></a>
+        <a href="#"><i class='bx bx-user'></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Checkout Content -->
+  <div id="confirmationMessage" class="confirmation-message">
+    <h2>Thank You for Buying!</h2>
+    <p>Your order has been placed successfully.</p>
+  </div>
+
+  <main class="checkout-container" id="checkoutSection">
+    <div class="checkout-items">
+      <table class="checkout-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Seller</th>
+            <th>Variation</th>
+            <th>Availability</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="checkout-items">
+          <!-- JavaScript will inject checkout rows here -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <div class="summary-item">
+        <span>Subtotal</span>
+        <span id="subtotal">₱0.00</span>
+      </div>
+      <div class="summary-item">
+        <span><strong>Total</strong></span>
+        <span id="totalPayment">₱0.00</span>
+      </div>
+
+      <div class="payment-method">
+        <h4>Payment Method</h4>
+        <div class="payment-option">Cash on Delivery</div>
+      </div>
+
+      <div class="terms">
+        By placing an order, you agree to the <a href="#">NU BARKET Terms of Use and Sale</a> and acknowledge that you have read the <a href="#">Privacy Policy</a>.
+      </div>
+
+      <div class="summary-item">
+        <span><strong>Total (<span id="totalItems">0</span> Items)</strong></span>
+      </div>
+
+      <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-cont">
+      <ul>
+        <li>
+          <div class="footer-logo">
+            <img src="Project Logo.png" alt="NU Barket Logo">
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>About NU Barket</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Return/Refund Policy</h3>
+      </div>
+      <div class="footer-column">
+        <h3>Customer Service</h3>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function renderCheckout() {
+      const cart = JSON.parse(localStorage.getItem("checkoutCart")) || [];
+      const container = document.getElementById("checkout-items");
+      const subtotalEl = document.getElementById("subtotal");
+      const totalPaymentEl = document.getElementById("totalPayment");
+      const totalItemsEl = document.getElementById("totalItems");
+      let subtotal = 0;
+
+      container.innerHTML = "";
+
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+
+        container.innerHTML += `
+          <tr>
+            <td class="product-info">
+              <img src="${item.image}" alt="${item.name}">
+              <div>
+                <p><strong>${item.name}</strong></p>
+              </div>
+            </td>
+            <td>${item.seller || 'Maloi Recalde'}</td>
+            <td>${item.color}, ${item.size}</td>
+            <td class="availability-select">
+              <select>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+              </select>
+            </td>
+            <td>${item.quantity}</td>
+            <td>₱${(item.price || 0).toFixed(2)}</td>
+            <td>₱${itemTotal.toFixed(2)}</td>
+          </tr>
+        `;
+      });
+
+      subtotalEl.textContent = `₱${subtotal.toFixed(2)}`;
+      totalPaymentEl.textContent = `₱${subtotal.toFixed(2)}`;
+      totalItemsEl.textContent = cart.length;
+    }
+
+    function placeOrder() {
+      const checkoutSection = document.getElementById("checkoutSection");
+      const confirmationMessage = document.getElementById("confirmationMessage");
+      checkoutSection.style.display = "none";
+      confirmationMessage.style.display = "block";
+      localStorage.removeItem("checkoutCart");
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const checkoutCart = JSON.parse(localStorage.getItem("checkoutCart")) || [];
+      const remainingCart = cart.filter(cartItem => !checkoutCart.some(checkoutItem => 
+        checkoutItem.image === cartItem.image && 
+        checkoutItem.name === cartItem.name && 
+        checkoutItem.color === cartItem.color && 
+        checkoutItem.size === cartItem.size
+      ));
+      localStorage.setItem("cart", JSON.stringify(remainingCart));
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderCheckout();
+    });
+  </script>
+</body>
+</html>
