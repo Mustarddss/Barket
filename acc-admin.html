@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Admin</title>
+    <link rel="stylesheet" href="acc-admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <div class="nav-top">
+            <div class="nav-logo">
+                <img src="Project Logo.png" alt="NU Barket Logo">
+                <span class="school">NU</span>
+                <span class="barket">Barket</span>
+            </div>
+            <!--Menu: Center-->
+            <div class="nav-center">
+                <a href="acc-admin.html" class="accounts">Accounts</a>
+                <a href="prod-admin.html" class="products">Products</a>
+            </div>
+            <!--Menu: Right-->
+            <div class="nav-right">
+                <img src="profile.png" alt="Profile Picture" class="profile-pic">
+            </div>
+        </div>
+    </header>
+
+    <!--Page Title-->
+    <div class="page-title">
+        <div class="bg-img">
+            <img src="NU-Dasma.jpg" alt="Background Image">
+            <h1>Accounts</h1>
+
+            <div class="search-bar">
+                <div class="search">
+                    <a href="#"><i class='bx bx-search'></i></a>
+                    <input type="text">
+                </div>
+                </div>
+        </div>
+    </div>
+
+    <!--Orders Section-->
+    <section class="orders-section">
+        <div class="container">
+            <div class="accounts-table">
+                <div class="profile-container">
+                    <img src="profile.png" alt="Profile Picture">
+                </div>
+                <div class="account-info">
+                    <h2 id="account_id">Account ID</h2>
+                    <h2 id="account_un">Account Username</h2>
+                    <h2 id="account_name">Name</h2>
+                    <h2 id="account_ea">Email Address</h2>
+                    <h2 id="account_gender">Gender (optional)</h2>
+                </div>
+
+                <div class="account-details">
+                    <p id="student_id">Student ID</p>
+                    <p id="student_un">Username</p>
+                    <p id="student_name">Name</p>
+                    <p id="student_ea">Email Address</p>
+                    <p id="student_gender">Gender</p>
+                </div>
+
+                <div class="account-actions">
+                    <p>Role: </p>
+                    <p class="category">Customer</p>
+                    <select class="action-select">
+                        <option value="" disabled selected hidden>Action</option>
+                        <option value="view">View Profile</option>
+                        <option value="ban">Ban Account</option>
+                        <option value="activate">Activate</option>
+                    </select>
+                </div>
+        </div>
+    </section>
+</body>
+</html>
