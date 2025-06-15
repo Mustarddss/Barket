@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10%;
+  background-color: #ffffff;
+}
+
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo img {
+    max-width: 110px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.school {
+  color: #143f77;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.barket {
+  color: #ffed00;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.nav-center {
+    position: absolute;
+    right: 15%;
+    font-family: 'Arial', sans-serif;
+    margin-left: 250px;
+    display: flex;
+    gap: 60px;
+    cursor: pointer;
+}
+
+.nav-center a {
+  margin-top: 10px;
+}
+
+.nav-center a:hover {
+  color: #143f77;
+}
+
+.products {
+  color: black;
+}
+
+.accounts {
+  color: #143f77;
+}
+
+.nav-right {
+  position: absolute;
+  right: 130px;
+}
+
+.nav-right img {
+    max-width: 80px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.bg-img img {
+  display: flex;
+  width: 100%;
+  height: 35vh;
+  object-fit: cover;
+  position: relative;
+  top: 85px;
+}
+
+.bg-img h1 {
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+  font-size: 75px;
+  text-align: center;
+  cursor: default;
+}
+
+.container {
+  position: absolute;
+  top: 31%;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 50px auto;
+  background-color: #ffffff;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.search-bar {
+  position: absolute;
+  right: 3%;
+  top: 22%; 
+  align-items: center;
+  max-width: 700px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 50px;
+  width: 100%;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 8px 12px 8px 36px;
+  border: solid 1px #a6a6a6;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-bar a {
+  font-size: 22px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  position: absolute;
+  left: 8px;
+  top: 20%;
+}
+
+.profile-container {
+    position: absolute;
+    top: 8%;   
+    left: 8%;
+    height: 22%;
+    width: 12%;
+}
+
+.profile-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.account-info {
+    position: absolute;
+    top: 5%;
+    right: 60%;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.account-info h2 {
+    margin-bottom: 20px;
+}
+
+.account-details {
+    position: absolute;
+    top: 5%;
+    right: 40%;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.account-details p {
+    margin-bottom: 33px;
+}
+
+.account-actions {
+    position: absolute;
+    top: 40%;
+    right: 26%;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    flex-direction: row;
+    align-items: center;
+}
+
+.account-actions p {
+    font-size: 15px;
+}
+
+.category {
+    margin-left: 20px;
+    background-color: #d3e8f9;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: default;
+}
+
+.action-select {
+    font-family: 'Poppins', sans-serif;
+    padding: 11px 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 15px;
+    cursor: pointer;
+}
